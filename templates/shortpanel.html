@@ -1,0 +1,77 @@
+{% extends "bare_layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="ui.css">
+<script src="script.js"></script>
+{% endblock %}
+
+{% block container %}
+<div class="container">
+    <h1>Shortened Links</h1>
+    <!-- Create Link -->
+    <form method="post" id="createForm">
+        <input type="text" name="link" placeholder="full link">
+        <input class="right" type="text" name="short" placeholder="abbreviation">
+        <input type="submit"> </form>
+
+    <div class="links">
+        {% for link in links %}
+            <div><a href="{{ link.link }}" target="_blank">{{ link.link }}</a></div>
+            <div><span onclick="popup('{{ link.short }}')">{{ link.short }}</span><img src="edit.svg" onclick="edit('{{ link.short }}')"></div>
+        {% endfor %}
+    </div>
+
+    {% if edit %}
+    <div class="edit-box" id="edit-container">
+        <div class="container">
+            <form method="POST" id="newData">
+
+                <label for="newTitle">Title</label>
+                <input type="text" name="newTitle" id="newTitle" value="{{ edit.title }}">
+
+                <label for="newImage">Image</label>
+                <input type="text" name="newImage" id="newImage" value="{{ edit.image }}">
+
+                <label for="newDescription">Description</label>
+                <input type="text" name="newDescription" id="newDescription" value="{{ edit.description }}">
+
+                <input type="hidden" name="oldShort" value=" {{ edit.short }}">
+
+                <label for="newShort">Short</label>
+                <input type="text" name="newShort" id="newShort" value="{{ edit.short }}">
+
+                <label for="newLink">Full Link</label>
+                <input type="text" name="newLink" id="newLink" value="{{ edit.link }}">
+
+                <input type="submit" value="submit">
+
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Delete Form -->
+    <form method="post" id="deleteForm">
+        <input type="text" name="delete" placeholder="delete short" class="delete">
+        <input type="submit"> </form>
+
+    <!-- Edit Request Form
+        This is submitted by Javascript with edit(short) is called -->
+    <form method="post" id="editForm" class="hidden">
+        <input type="text" name="editRequest" id="editField"> </form>
+
+</div>
+<!-- Flash Module -->
+<div id="flash" class="hidden"></div>
+{% if flash %}
+<script>printFlash({{ flash }})</script>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        function popup(link) {
+            prompt("Copy the selected link", window.location.href + link)
+        }
+    </script>
+{%endblock%}

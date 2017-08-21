@@ -9,8 +9,8 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
  * val is used as the main key for matching to full link and data in database
  */
 $db = new Database();
-$short = $_GET["val"];
-$data = $db->selectShortLinks($short);
+$short = substr($_GET["val"], 1);
+$data = $db->selectShortLink($short);
 
 if ($data["link"]) {
     $title = htmlspecialchars($data["title"], ENT_QUOTES);
@@ -28,7 +28,7 @@ $data = [
     "url" => $_SERVER["HTTP_HOST"] . "/$short",
     "image" => isset($image) ? $image : null,
     "description" => isset($description) ? $description : null,
-    "404" => $_SERVER["HTTP_HOST"] . "/404.php"
+    "error" => "/404.php"
 ];
 
 echo $twig->render("short.html", $data);
