@@ -1,0 +1,15 @@
+{
+  "name": "pyang/personal-website",
+  "description": "Peter Yang's personal website",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Peter Yang",
+      "email": "me@peteryang.io"
+    }
+  ],
+  "require": {
+    "twig/twig": "v2.4.3"
+  }
+}

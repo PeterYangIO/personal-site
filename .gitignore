@@ -1,0 +1,5 @@
+/vendor
+/.idea
+secret.php
+composer.phar
+composer.lock

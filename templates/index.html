@@ -1,0 +1,123 @@
+{% extends "bare_layout.html" %}
+
+{% block head %}
+<script src="/scripts/onload.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+{% block content %}
+<div class="background">
+    <?php include_once("common/analyticstracking.php") ?>
+    <div class="row">
+        <div class="col-4" id="white-container">
+            <a onclick="setDisplay('#main')" id="back-button" style="display: none"></a>
+            <div class="white-content" id="main">
+                <div class="fade-on-load vertical-center"> <img src="img/logo.svg" id="logo">
+                    <h1>Peter Yang</h1>
+                    <p>Hi. I'm an art driven techie and a tech driven artist.</p>
+                    <p><a onclick="setDisplay('#about')">about</a> || <a onclick="setDisplay('#contact')">contact</a> || <a href="docs/resume.pdf" target="_blank">resume</a></p>
+                    <div class="external-links">
+                        <a href="https://github.com/PeterYang1625/" target="_blank"><img src="img/github.svg"></a>
+                        <a href="https://www.linkedin.com/in/peter-yang-51672b119" target="_blank"><img src="/img/linkedin.svg"></a>
+                        <a href="https://www.youtube.com/channel/UC7bn50F_ujOrD6UerbAtlXw" target="_blank"><img src="/img/youtube.svg"></a>
+                        <a href="mailto:me@peteryang.io"><img src="img/email.svg"></a>
+                    </div>
+                    <a href="#black-container">
+                        <div class="accent-circle hide-on-desktop" id="see-more"><img src="/img/icon-downarrow.svg"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="hidden white-content" id="contact">
+                <div id="contact-form" class="vertical-center">
+                    <h2>Contact</h2>
+                    <form action="contact.php" method="POST">
+                        <div class="space"></div>
+                        <input type="text" name="from" placeholder="Name" required>
+                        <div class="space"></div>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <div class="space"></div>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <div class="space"></div>
+                        <textarea rows="5" name="message" placeholder="Message" required></textarea>
+                        <div class="space"></div>
+                        <div class="recapcha-container">
+                            <div class="g-recaptcha" data-sitekey="6LeaSQcUAAAAAKoKJpxgWXRBPST-oV4m0XrvxQLc"></div>
+                        </div>
+                        <input type="submit" value="Submit" onclick="printFlashNoTimeout('your message is being processed')"> </form>
+                    <p><a onclick="setDisplay('#main')">back</a></p>
+                </div>
+            </div>
+            <div class="hidden white-content" id="about">
+                <div class="vertical-center">
+                    <h2>About Me</h2>
+                    <p>I am a college freshman studying at the University of Southern California. Over the years, I have synthesized technical and artistic skills in order to be able to produce such a wide range of content. Whether it's a website, a full symphonic score production, or promotional visuals, I got you covered. Interested? Explore this site to see the various projects I've worked on and take a look at <a href="docs/resume.pdf" target="_blank">my resume.</a></p>
+                    <p><a onclick="setDisplay('#main')">back</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-8" id="black-container">
+            <a href="programming/">
+                <div class="programming row">
+                    <div class="col-4 hide-on-mobile"> <img src="img/code.svg"> </div>
+                    <div class="col-8">
+                        <h2>Programming &amp; IT</h2>
+                        <h3>Web Development &amp; Design</h3>
+                        <h3>Software Development</h3>
+                        <h3>Server &amp; Database Control</h3>
+                        <p>see more <span class="right-arrow"></span></p>
+                    </div>
+                </div>
+            </a>
+            <a href="music/">
+                <div class="orchestral row">
+                    <div class="col-4 hide-on-mobile"> <img src="img/music.svg"> </div>
+                    <div class="col-8">
+                        <h2>Orchestral Music</h2>
+                        <h3>Arranging</h3>
+                        <h3>Music Engraving</h3>
+                        <h3>Realistic Mockups</h3>
+                        <p>see more <span class="right-arrow"></span></p>
+                    </div>
+                </div>
+            </a>
+            <a href="digital-design/">
+                <div class="digital-art row">
+                    <div class="col-4 hide-on-mobile"> <img src="img/design.svg"> </div>
+                    <div class="col-8">
+                        <h2>Digital Design</h2>
+                        <h3>Graphic Design</h3>
+                        <h3>UI/UX Design</h3>
+                        <h3>Video Production</h3>
+                        <p>see more <span class="right-arrow"></span></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="flash" class="hidden"></div>
+    {% if flash %}
+        <script>printFlash({{ flash }})</script>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    if (window.location.hash) {
+        setTimeout(setHashDisplay, 1000);
+    }
+
+    function setHashDisplay() {
+        var hash = window.location.hash.substring(1);
+        switch (hash) {
+            case 'about':
+                setDisplay('#about');
+                break;
+            case 'contact':
+                setDisplay('#contact');
+                break;
+            default:
+                console.log('Hash does not match any available content');
+        }
+    }
+</script>
+{% endblock %}
