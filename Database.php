@@ -102,7 +102,6 @@ class Database
         return $data;
     }
 
-    // TODO This does not work
     /**
      * @param string $oldShort
      * @param string $title
@@ -115,8 +114,8 @@ class Database
     public function updateShortLink(string $oldShort, string $title, string $image, string $desc, string $newShort, string $link) {
         $query = $this->db->prepare("
         UPDATE short_links
-        SET title='?', image='?', description='?', short='?', link='?'
-        WHERE short='?'");
+        SET title=?, image=?, description=?, short=?, link=?
+        WHERE short=?");
 
         if (!$query) return false;
 
