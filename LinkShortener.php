@@ -28,22 +28,18 @@ class LinkShortener
             echo("Link added successfully");
         else
             echo("Link already exists");
-        unset($_POST["link"]);
-        unset($_POST["short"]);
 
         // TODO front end
     }
 
     public function post_delete(string $short) {
         $this->db->deleteShortLink($short);
-        unset($_POST["delete"]);
 
         // TODO front end
         echo("Link deleted");
     }
 
-    public function post_editRequest(string $short) {
-        unset($_POST["editRequest"]);
+    public function post_showEdit(string $short) {
 
         $edit = $this->db->selectShortLink($short);
 
@@ -69,8 +65,6 @@ class LinkShortener
         ];
 
         $this->db->updateShortLink($oldShort, $ogs, $newShort, $link);
-
-        unset($_POST["update"]);
 
         // TODO front end
         echo("updated link");

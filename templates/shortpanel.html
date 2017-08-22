@@ -2,14 +2,14 @@
 
 {% block head %}
 <link rel="stylesheet" href="ui.css">
-<script src="script.js"></script>
 {% endblock %}
 
 {% block content %}
 <div class="container">
     <h1>Shortened Links</h1>
-    <!-- Create Link -->
-    <form method="post" id="createForm">
+    <!-- Add Link -->
+    <form method="POST">
+        <input type="hidden" name="method" value="add">
         <input type="text" name="link" placeholder="full link">
         <input class="right" type="text" name="short" placeholder="abbreviation">
         <input type="submit">
@@ -26,6 +26,7 @@
     <div class="edit-box" id="edit-container">
         <div class="container">
             <form method="POST">
+                <input type="hidden" name="method" value="doEdit">
 
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" value="{{ edit.title }}">
@@ -51,12 +52,6 @@
         </div>
     </div>
     {% endif %}
-
-    <!-- Edit Request Form
-        This is submitted by Javascript with edit(short) is called -->
-    <form method="post" id="editForm" class="hidden">
-        <input type="hidden" name="editRequest" id="editField"> </form>
-
 </div>
 <!-- Flash Module -->
 <div id="flash" class="hidden"></div>
@@ -66,9 +61,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script>
-        function popup(link) {
-            prompt("Copy the selected link", window.location.href + link)
-        }
-    </script>
+    <script src="script.js"></script>
 {%endblock%}
