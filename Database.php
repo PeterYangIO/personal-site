@@ -131,11 +131,21 @@ class Database
      * @return bool success
      */
     public function updateShortLink(string $oldShort, string $title, string $image, string $desc, string $newShort, string $link) {
+        echo "old short $oldShort";
+        echo "title $title";
+        echo "image $image";
+        echo "desc $desc";
+        echo "new short $newShort";
+        echo "link $link";
+        
         $query = $this->db->prepare("
-            UPDATE short_links
-            SET title='?', image='?', description='?', short='?', link='?'
-            WHERE short='?'");
+        UPDATE short_links
+        SET title='?', image='?', description='?', short='?', link='?'
+        WHERE short='?'");
         $query->bind_param("ssssss", $title, $image, $desc, $newShort, $link, $oldShort);
+        echo "vardump of query";
+        var_dump($query);
+        echo "end vardump of query";
         if (!$query || !$query->execute()) {
             echo("Issue with update short link");
             return false;
