@@ -7,48 +7,57 @@ class LinkShortener
     function __construct()
     {
         $this->db = new Database();
+        $loader = new Twig_Loader_Filesystem($_SERVER["DOCUMENT_ROOT"] . "/templates");
+        $this->twig = new Twig_Environment($loader);
     }
 
+    /**
+     * Displays all links from db as the main panel
+     */
     public function get_links() {
         $links = $this->db->selectShortLinks();
-
-        $loader = new Twig_Loader_Filesystem($_SERVER["DOCUMENT_ROOT"] . "/templates");
-        $twig = new Twig_Environment($loader);
 
         $data = [
             "links" => $links
         ];
 
-        echo $twig->render("shortpanel.html", $data);
-
+        echo $this->twig->render("shortpanel.html", $data);
     }
 
+    /**
+     * @param string $link full url from the http part
+     * @param string $short just the term to come at the end after /
+     */
     public function post_addLink(string $link, string $short) {
         $scrapeData = self::scrapeLink($link);
         $scrapeData = self::cleanScrapeData($scrapeData, $link);
         echo "scrape data";
         echo json_encode($scrapeData);
         if ($this->db->insertShortLink($scrapeData, $short, $link))
-            echo("Link added successfully");
+            $message = "Link added successfully";
         else
-            echo("Did not add link");
+            $message = "An error occurred and the link was not added";
 
-        // TODO front end
+        echo $this->twig->render("shortpanel.html", ["flash" => $message]);
     }
 
+    /**
+     * @param string $short
+     */
     public function post_delete(string $short) {
         if ($this->db->deleteShortLink($short))
-            echo "Link deleted";
+            $message = "Link deleted successfully";
+        else
+            $message = "An error occurred and the link was not deleted";
 
-        // TODO front end
+        echo $this->twig->render("shortpanel.html", ["flash" => $message]);
     }
 
+    /**
+     * @param string $short
+     */
     public function post_showEdit(string $short) {
-
         $edit = $this->db->selectShortLink($short);
-
-        $loader = new Twig_Loader_Filesystem($_SERVER["DOCUMENT_ROOT"] . "/templates");
-        $twig = new Twig_Environment($loader);
 
         $edit = array_merge(
             $edit, // ["title", "image", "desc", "link"]
@@ -57,18 +66,31 @@ class LinkShortener
 
         $data = ["edit" => $edit];
 
-        echo $twig->render("shortpanel.html", $data);
+        echo $this->twig->render("shortpanel.html", $data);
     }
 
+    /**
+     * @param string $title
+     * @param string $image
+     * @param string $desc
+     * @param string $oldShort -> used as key to look up in table
+     * @param string $newShort
+     * @param string $link
+     */
     public function post_updateLink(string $title, string $image, string $desc,
                                     string $oldShort, string $newShort, string $link) {
 
-        // TODO front end
         if ($this->db->updateShortLink($oldShort, $title, $image, $desc, $newShort, $link))
-            echo("updated link");
+            $message = "Link updated successfully";
         else
-            echo("failed to update link");
+            $message = "An error occurred and the link was not updated";
+
+        echo $this->twig->render("shortpanel.html", ["flash" => $message]);
     }
+
+    /**
+     * START PRIVATE FUNCTIONS
+     */
 
     /**
      * @param string $link

@@ -10,6 +10,7 @@ function edit(short){
 
 function deleteItem(short) {
     $.post(window.location.href, {"method" : "delete", "short" : short});
+    location.reload();
 }
 
 function cancel() {
