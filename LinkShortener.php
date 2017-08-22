@@ -1,6 +1,7 @@
 <?php
 require("Database.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
+session_start();
 
 class LinkShortener
 {
@@ -21,6 +22,13 @@ class LinkShortener
             "links" => $links
         ];
 
+        if (isset($_SESSION["flash"]) && $_SESSION["flash"]) {
+            $data = array_merge(
+                $data,
+                ["flash" => $_SESSION["flash"]]
+            );
+        }
+
         echo $this->twig->render("shortpanel.html", $data);
     }
 
@@ -38,7 +46,7 @@ class LinkShortener
         else
             $message = "An error occurred and the link was not added";
 
-        echo $this->twig->render("shortpanel.html", ["flash" => $message]);
+        self::redirect($message);
     }
 
     /**
@@ -50,7 +58,7 @@ class LinkShortener
         else
             $message = "An error occurred and the link was not deleted";
 
-        echo $this->twig->render("shortpanel.html", ["flash" => $message]);
+        self::redirect($message);
     }
 
     /**
@@ -85,7 +93,7 @@ class LinkShortener
         else
             $message = "An error occurred and the link was not updated";
 
-        echo $this->twig->render("shortpanel.html", ["flash" => $message]);
+        self::redirect($message);
     }
 
     /**
@@ -135,5 +143,14 @@ class LinkShortener
             $newScrapeData["image"] = $link . $newScrapeData["image"];
         }
         return $newScrapeData;
+    }
+
+    /**
+     * Redirects with a flash message
+     * @param string $message
+     */
+    private static function redirect(string $message) {
+        $_SESSION["flash"] = $message;
+        header("Location: " . $_SERVER["REQUEST_URI"]);
     }
 }
