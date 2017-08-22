@@ -24,19 +24,23 @@ class LinkShortener
     }
 
     public function post_addLink(string $link, string $short) {
-        if (self::createShortLink($short, $link))
+        $scrapeData = self::scrapeLink($link);
+        $scrapeData = self::cleanScrapeData($scrapeData, $link);
+        echo "scrape data";
+        echo json_encode($scrapeData);
+        if ($this->db->insertShortLink($scrapeData, $short, $link))
             echo("Link added successfully");
         else
-            echo("Link already exists");
+            echo("Did not add link");
 
         // TODO front end
     }
 
     public function post_delete(string $short) {
-        $this->db->deleteShortLink($short);
+        if ($this->db->deleteShortLink($short))
+            echo "Link deleted";
 
         // TODO front end
-        echo("Link deleted");
     }
 
     public function post_showEdit(string $short) {
@@ -47,7 +51,7 @@ class LinkShortener
         $twig = new Twig_Environment($loader);
 
         $edit = array_merge(
-            $edit, // ["title", "image", "description", "link"]
+            $edit, // ["title", "image", "desc", "link"]
             ["short" => $short]
         );
 
@@ -61,24 +65,12 @@ class LinkShortener
         $ogs = [
             "title" => $title,
             "image" => $image,
-            "description" => $desc
+            "desc" => $desc
         ];
 
-        $this->db->updateShortLink($oldShort, $ogs, $newShort, $link);
-
         // TODO front end
-        echo("updated link");
-    }
-
-    /**
-     * @param string $short
-     * @param string $link
-     * @return bool success
-     */
-    private function createShortLink(string $short, string $link){
-        $scrapeData = self::scrapeLink($link);
-        $scrapeData = self::cleanScrapeData($scrapeData, $link);
-        return $this->db->insertShortLink($scrapeData, $short, $link);
+        if ($this->db->updateShortLink($oldShort, $ogs, $newShort, $link))
+            echo("updated link");
     }
 
     /**

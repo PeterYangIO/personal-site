@@ -22,6 +22,7 @@ class Database
      */
     public function deleteShortLink(string $short) {
         $query = $this->db->prepare("DELETE FROM short_links WHERE short=?");
+        $query->bind_param("s", $short);
         if (!$query || !$query->execute()) {
             echo("Issue with delete short link");
             return false;
@@ -59,8 +60,12 @@ class Database
             $query = $this->db->prepare("INSERT INTO short_links VALUES (?, ?, ?, ?, ?, ?, ?)");
             $pid = $clicks = null;
             $query->bind_param("isssssi", $pid, $title, $image, $description, $short, $link, $clicks);
-            if (!$query || !$query->execute()) {
+            if (!$query) {
                 echo("Issue with insert scrape data [2]");
+                return false;
+            }
+            else if (!$query->execute()) {
+                echo("Issue with insert scrape data[3]");
                 return false;
             }
             $query->close();
@@ -89,14 +94,12 @@ class Database
         return [
             "title" => $title,
             "image" => $image,
-            "description" =>$description,
+            "desc" =>$description,
             "link" => $link
         ];
     }
 
-    /**
-     * @return array|bool
-     */
+
     public function selectShortLinks() {
         $data = [];
         $query = $this->db->prepare("SELECT link, short FROM short_links ORDER BY short");
@@ -128,7 +131,7 @@ class Database
             UPDATE short_links
             SET title=?, image=?, description=?, short=?, link=?
             WHERE short=?");
-        $query->bind_param("ssssss", $ogs["title"], $ogs["image"], $ogs["description"], $newShort, $link, $oldShort);
+        $query->bind_param("ssssss", $ogs["title"], $ogs["image"], $ogs["desc"], $newShort, $link, $oldShort);
         if (!$query || !$query->execute()) {
             echo("Issue with update short link");
             return false;
