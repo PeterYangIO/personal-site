@@ -16,8 +16,15 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else if (isset($_POST["editRequest"])) {
         $ls->post_editRequest($_POST["editRequest"]);
     }
-    else if (isset($_POST["newTitle"])) {
-        $ls->post_updateLink();
+    else if (isset($_POST["newLink"])) {
+        $ls->post_updateLink(
+            $_POST["title"],
+            $_POST["image"],
+            $_POST["desc"],
+            $_POST["oldShort"],
+            $_POST["newShort"],
+            $_POST["newLink"]
+        );
     }
 }
 else {

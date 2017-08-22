@@ -60,20 +60,17 @@ class LinkShortener
         echo $twig->render("shortpanel.html", $data);
     }
 
-    public function post_updateLink() {
+    public function post_updateLink(string $title, string $image, string $desc,
+                                    string $oldShort, string $newShort, string $link) {
         $ogs = [
-            "title" => $_POST["newTitle"],
-            "image" => $_POST["newImage"],
-            "description" => $_POST["newDescription"]
+            "title" => $title,
+            "image" => $image,
+            "description" => $desc
         ];
 
-        $oldShort = $_POST["oldShort"];
-        $newShort = $_POST["newShort"];
-        $newLink = $_POST["newLink"];
+        $this->db->updateShortLink($oldShort, $ogs, $newShort, $link);
 
-        $this->db->updateShortLink($oldShort, $ogs, $newShort, $newLink);
-
-        unset($_POST["newTitle"]);
+        unset($_POST["update"]);
 
         // TODO front end
         echo("updated link");
