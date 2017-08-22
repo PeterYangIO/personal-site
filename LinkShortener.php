@@ -66,6 +66,8 @@ class LinkShortener
         // TODO front end
         if ($this->db->updateShortLink($oldShort, $title, $image, $desc, $newShort, $link))
             echo("updated link");
+        else
+            echo("failed to update link");
     }
 
     /**

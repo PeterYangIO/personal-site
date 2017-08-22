@@ -23,10 +23,9 @@ class Database
     public function deleteShortLink(string $short) {
         $query = $this->db->prepare("DELETE FROM short_links WHERE short=?");
         $query->bind_param("s", $short);
-        if (!$query || !$query->execute()) {
-            echo("Issue with delete short link");
-            return false;
-        }
+
+        if (!$query || !$query->execute()) return false;
+
         $query->close();
         return true;
     }
@@ -41,18 +40,13 @@ class Database
         $query = $this->db->prepare("SELECT short FROM short_links WHERE short=?");
         $query->bind_param("s", $short);
 
-        if (!$query || !$query->execute()) {
-            echo("Issue with insert scrape data [1]");
-            return false;
-        }
+        if (!$query || !$query->execute()) return false;
 
         $query->bind_result($result);
         $query->fetch();
         $query->close();
 
-        if ($result !== null) {
-            return false;
-        }
+        if ($result !== null) return false;
         else {
             $title = $scrape["title"];
             $image = $scrape["image"];
@@ -61,14 +55,9 @@ class Database
             $pid = null;
             $clicks = 0;
             $query->bind_param("isssssi", $pid, $title, $image, $description, $short, $link, $clicks);
-            if (!$query) {
-                echo("Issue with insert scrape data [2]");
-                return false;
-            }
-            else if (!$query->execute()) {
-                echo("Issue with insert scrape data[3]");
-                return false;
-            }
+
+            if (!$query || !$query->execute()) return false;
+
             $query->close();
             return true;
         }
@@ -79,14 +68,10 @@ class Database
      * @return array|null ["title", "image", "description", "link"]
      */
     public function selectShortLink(string $short) {
-        $data = [];
         $query = $this->db->prepare("SELECT title, image, description, link FROM short_links WHERE short=?");
         $query->bind_param("s", $short);
 
-        if (!$query || !$query->execute()) {
-            echo("Issue with select short link");
-            return null;
-        }
+        if (!$query || !$query->execute()) return null;
 
         $query->bind_result($title, $image, $description, $link);
         $query->fetch();
@@ -104,10 +89,7 @@ class Database
     public function selectShortLinks() {
         $data = [];
         $query = $this->db->prepare("SELECT link, short FROM short_links ORDER BY short");
-        if (!$query || !$query->execute()) {
-            echo("Issue with select short links");
-            return false;
-        }
+        if (!$query || !$query->execute()) return null;
         $query->bind_result($link, $short);
         while ($query->fetch()) {
             $data[] = [
@@ -131,26 +113,19 @@ class Database
      * @return bool success
      */
     public function updateShortLink(string $oldShort, string $title, string $image, string $desc, string $newShort, string $link) {
-        echo "old short $oldShort";
-        echo "title $title";
-        echo "image $image";
-        echo "desc $desc";
-        echo "new short $newShort";
-        echo "link $link";
-        
         $query = $this->db->prepare("
         UPDATE short_links
         SET title='?', image='?', description='?', short='?', link='?'
         WHERE short='?'");
+
+        if (!$query) return false;
+
         $query->bind_param("ssssss", $title, $image, $desc, $newShort, $link, $oldShort);
-        echo "vardump of query";
-        var_dump($query);
-        echo "end vardump of query";
-        if (!$query || !$query->execute()) {
-            echo("Issue with update short link");
-            return false;
-        }
+
+        if (!$query->execute()) return false;
+
         $query->close();
+
         return true;
     }
 }
