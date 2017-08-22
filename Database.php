@@ -31,7 +31,6 @@ class Database
         return true;
     }
 
-    // TODO this does not work [3]
     /**
      * @param array $scrape ["title", "image", "description"]
      * @param string $short
@@ -122,7 +121,6 @@ class Database
     }
 
     // TODO This does not work
-
     /**
      * @param string $oldShort
      * @param string $title
@@ -135,8 +133,8 @@ class Database
     public function updateShortLink(string $oldShort, string $title, string $image, string $desc, string $newShort, string $link) {
         $query = $this->db->prepare("
             UPDATE short_links
-            SET title=?, image=?, description=?, short=?, link=?
-            WHERE short=?");
+            SET title='?', image='?', description='?', short='?', link='?'
+            WHERE short='?'");
         $query->bind_param("ssssss", $title, $image, $desc, $newShort, $link, $oldShort);
         if (!$query || !$query->execute()) {
             echo("Issue with update short link");
