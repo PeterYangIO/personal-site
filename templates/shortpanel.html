@@ -52,6 +52,14 @@
         </div>
     </div>
     {% endif %}
+
+    <!-- Edit Request Form
+        This is submitted by Javascript with edit(short) is called -->
+    <form method="post" id="editForm" class="hidden">
+        <input type="hidden" name="method" value="showEdit">
+        <input type="hidden" name="short" id="editField">
+    </form>
+
 </div>
 <!-- Flash Module -->
 <div id="flash" class="hidden"></div>

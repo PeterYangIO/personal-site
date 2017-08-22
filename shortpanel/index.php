@@ -12,7 +12,7 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $ls->post_addLink($_POST["link"], $_POST["short"]);
             break;
         case "delete":
-            $ls->post_delete($_POST["delete"]);
+            $ls->post_delete($_POST["short"]);
             break;
         case "showEdit":
             $ls->post_showEdit($_POST["short"]);

@@ -4,7 +4,8 @@ function popup(link) {
 }
 
 function edit(short){
-    $.post(window.location.href, {"method" : "showEdit", "short" : short});
+    document.getElementById("editField").value = short;
+    document.getElementById("editForm").submit();
 }
 
 function deleteItem(short) {
