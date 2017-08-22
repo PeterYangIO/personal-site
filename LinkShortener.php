@@ -62,14 +62,9 @@ class LinkShortener
 
     public function post_updateLink(string $title, string $image, string $desc,
                                     string $oldShort, string $newShort, string $link) {
-        $ogs = [
-            "title" => $title,
-            "image" => $image,
-            "desc" => $desc
-        ];
 
         // TODO front end
-        if ($this->db->updateShortLink($oldShort, $ogs, $newShort, $link))
+        if ($this->db->updateShortLink($oldShort, $title, $image, $desc, $newShort, $link))
             echo("updated link");
     }
 

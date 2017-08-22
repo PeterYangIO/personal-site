@@ -31,6 +31,7 @@ class Database
         return true;
     }
 
+    // TODO this does not work [3]
     /**
      * @param array $scrape ["title", "image", "description"]
      * @param string $short
@@ -58,7 +59,8 @@ class Database
             $image = $scrape["image"];
             $description = $scrape["description"];
             $query = $this->db->prepare("INSERT INTO short_links VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $pid = $clicks = null;
+            $pid = null;
+            $clicks = 0;
             $query->bind_param("isssssi", $pid, $title, $image, $description, $short, $link, $clicks);
             if (!$query) {
                 echo("Issue with insert scrape data [2]");
@@ -119,19 +121,23 @@ class Database
         return $data;
     }
 
+    // TODO This does not work
+
     /**
      * @param string $oldShort
-     * @param array $ogs ["title", "image", "description"]
+     * @param string $title
+     * @param string $image
+     * @param string $desc
      * @param string $newShort
      * @param string $link
      * @return bool success
      */
-    public function updateShortLink(string $oldShort, array $ogs, string $newShort, string $link) {
+    public function updateShortLink(string $oldShort, string $title, string $image, string $desc, string $newShort, string $link) {
         $query = $this->db->prepare("
             UPDATE short_links
             SET title=?, image=?, description=?, short=?, link=?
             WHERE short=?");
-        $query->bind_param("ssssss", $ogs["title"], $ogs["image"], $ogs["desc"], $newShort, $link, $oldShort);
+        $query->bind_param("ssssss", $title, $image, $desc, $newShort, $link, $oldShort);
         if (!$query || !$query->execute()) {
             echo("Issue with update short link");
             return false;
