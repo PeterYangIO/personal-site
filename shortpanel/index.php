@@ -1,5 +1,7 @@
 <?php
 require("../Database.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
+
 $db = new Database();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
