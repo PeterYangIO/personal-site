@@ -6,7 +6,6 @@
 {% endblock %}
 {% block content %}
 <div class="background">
-    <?php include_once("common/analyticstracking.php") ?>
     <div class="row">
         <div class="col-4" id="white-container">
             <a onclick="setDisplay('#main')" id="back-button" style="display: none"></a>
@@ -49,15 +48,15 @@
             <div class="hidden white-content" id="about">
                 <div class="vertical-center">
                     <h2>About Me</h2>
-                    <p>I am a college freshman studying at the University of Southern California. Over the years, I have synthesized technical and artistic skills in order to be able to produce such a wide range of content. Whether it's a website, a full symphonic score production, or promotional visuals, I got you covered. Interested? Explore this site to see the various projects I've worked on and take a look at <a href="docs/resume.pdf" target="_blank">my resume.</a></p>
+                    <p>I am a sophomore studying at the University of Southern California majoring in Computer Science / Business Administration. My industry experience as both a developer and project manager allows me to both implement and communicate software solutions. Explore this site to see the various projects I've worked on and take a look at <a href="/docs/resume.pdf" target="_blank">my resume.</a></p>
                     <p><a onclick="setDisplay('#main')">back</a></p>
                 </div>
             </div>
         </div>
         <div class="col-8" id="black-container">
-            <a href="programming/">
+            <a href="/programming">
                 <div class="programming row">
-                    <div class="col-4 hide-on-mobile"> <img src="img/code.svg"> </div>
+                    <div class="col-4 hide-on-mobile"> <img src="/img/code.svg"> </div>
                     <div class="col-8">
                         <h2>Programming &amp; IT</h2>
                         <h3>Web Development &amp; Design</h3>
@@ -67,9 +66,9 @@
                     </div>
                 </div>
             </a>
-            <a href="music/">
+            <a href="/music">
                 <div class="orchestral row">
-                    <div class="col-4 hide-on-mobile"> <img src="img/music.svg"> </div>
+                    <div class="col-4 hide-on-mobile"> <img src="/img/music.svg"> </div>
                     <div class="col-8">
                         <h2>Orchestral Music</h2>
                         <h3>Arranging</h3>
@@ -79,9 +78,9 @@
                     </div>
                 </div>
             </a>
-            <a href="digital-design/">
+            <a href="/digital-design">
                 <div class="digital-art row">
-                    <div class="col-4 hide-on-mobile"> <img src="img/design.svg"> </div>
+                    <div class="col-4 hide-on-mobile"> <img src="/img/design.svg"> </div>
                     <div class="col-8">
                         <h2>Digital Design</h2>
                         <h3>Graphic Design</h3>
