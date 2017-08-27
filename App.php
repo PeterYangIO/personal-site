@@ -15,7 +15,7 @@ class App
      * @param string $message
      */
     public static function sendEmail(string $to, string $subject, string $message) {
-        $mg = Mailgun::create(MAILGUN_KEY, new \Http\Adapter\Guzzle6\Client());
+        $mg = new Mailgun(MAILGUN_KEY, new \Http\Adapter\Guzzle6\Client());
         $mg->messages()->send("pya.ng", [
             "from" => WEBUSER,
             "to" => $to,

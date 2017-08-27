@@ -7,7 +7,6 @@ $email = $_POST["email"];
 $subject = $_POST["subject"];
 $message = $_POST["message"];
 $message = "Message from $from ($email):\n\n" . $message;
-$location = "Location: " . $_SERVER["DOCUMENT_ROOT"];
 
 // captcha verification
 $ch = curl_init("https://www.google.com/recaptcha/api/siteverify");
@@ -26,9 +25,8 @@ $crd = json_decode($cr);
 
 if ($crd === null || !$crd->success) {
     $_SESSION["flash"] = "A verification error occurred";
-    header($location);
 } else {
     App::sendEmail(MAIL_RECEIVER, $subject, $message);
     $_SESSION["flash"] = "Sent!";
-    header($location);
 }
+header("Location: " . $_SERVER["DOCUMENT_ROOT"]);
