@@ -24,6 +24,13 @@
             <div class="clicks">{{ link.clicks }}</div>
             <div class="edit-button"><img src="/img/edit.svg" onclick="edit('{{ link.short }}')"></div>
         </div>
+        <div class="card">
+            <img src=" {{ link.image }}">
+            <div class="card-text">
+                <h1>{{ link.title}}</h1>
+                <p>{{ link.desc }}</p>
+            </div>
+        </div>
         {% endfor %}
     </div>
 

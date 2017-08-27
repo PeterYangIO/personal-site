@@ -114,7 +114,7 @@ input[type="submit"] {
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .buttons button {
@@ -124,4 +124,31 @@ input[type="submit"] {
 
 .buttons button:hover {
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.full:hover + .card {
+    display: block;
+    position: fixed;
+    left: 50vw;
+    width: 400px;
+}
+
+.card {
+    display: none;
+    background: white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.card img {
+    width: 100%;
+    padding: 0;
+}
+
+.card-text {
+    width: 100%;
+}
+
+.card h1, .card p {
+    overflow: hidden;
+    text-overflow: ellipsis;;
 }

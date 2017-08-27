@@ -91,13 +91,16 @@ class Database
      */
     public function selectShortLinks() {
         $data = [];
-        $query = $this->db->prepare("SELECT link, short, clicks FROM short_links ORDER BY short");
+        $query = $this->db->prepare("SELECT title, image, description, short, link, clicks FROM short_links ORDER BY short");
         if (!$query || !$query->execute()) return null;
-        $query->bind_result($link, $short, $clicks);
+        $query->bind_result($title, $img, $desc, $short, $link, $clicks);
         while ($query->fetch()) {
             $data[] = [
-                "link" => $link,
+                "title" => $title,
+                "image" => $img,
+                "desc" => $desc,
                 "short" => $short,
+                "link" => $link,
                 "clicks" => $clicks
             ];
         }
