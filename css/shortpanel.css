@@ -44,7 +44,6 @@ a:hover {
 
 img{
     vertical-align: middle;
-    padding-left: 1em;
 }
 
 input, textarea{
@@ -63,33 +62,30 @@ input[type="submit"] {
     display: none;
 }
 
-.links:hover {
-    opacity: 0.75;
-    cursor: pointer;
-}
-
 .link {
-    display: flex;
-    justify-content: space-between;
+    padding: 7px;
 }
 
-.full {
+.full, .short {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-grow: 3;
+}
+
+.full {
+    width: 60%;
 }
 
 .short {
     width: 30%;
-    text-align: right;
-    text-decoration: underline;
-    transition: all 0.5s;
-    flex-grow: 2;
 }
 
 .clicks {
-    flex-grow: 1;
+    width: 5%;
+}
+
+.edit-button {
+    width: 5%;
 }
 
 .hidden {

@@ -22,7 +22,7 @@
             <div class="full"><a href="{{ link.link }}" target="_blank">{{ link.link }}</a></div>
             <div class="short" onclick="popup('{{ link.short }}')">{{ link.short }}</div>
             <div class="clicks">{{ link.clicks }}</div>
-            <img src="/img/edit.svg" onclick="edit('{{ link.short }}')">
+            <div class="edit-button"><img src="/img/edit.svg" onclick="edit('{{ link.short }}')"></div>
         </div>
         {% endfor %}
     </div>
