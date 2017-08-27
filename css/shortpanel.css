@@ -63,6 +63,7 @@ input[type="submit"] {
 }
 
 .link {
+    display: flex;
     padding: 7px;
 }
 
@@ -109,4 +110,18 @@ input[type="submit"] {
 .edit-box input, .edit-box textarea{
     width: 100%;
     margin-bottom: 1em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    border: 1px solid white;
+    transition: all 0.5s;
+}
+
+.buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
