@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,700);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin: 1em 0;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 100;
+}
+
+a {
+    color: #222;
+    transition: all 0.5s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+img{
+    vertical-align: middle;
+    padding-left: 1em;
+}
+
+input, textarea{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    font: inherit;
+    width: 47.5%;
+}
+
+textarea{
+    resize: none;
+}
+
+input[type="submit"] {
+    display: none;
+}
+
+.links:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+}
+
+.full {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 3;
+}
+
+.short {
+    width: 30%;
+    text-align: right;
+    text-decoration: underline;
+    transition: all 0.5s;
+    flex-grow: 2;
+}
+
+.clicks {
+    flex-grow: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.edit-box{
+    background: #222;
+    color: #eee;
+    box-shadow: 0 0 30px black;
+    width: 100%;
+    position: fixed;
+    padding: 1em;
+
+    z-index: 2;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.edit-box input, .edit-box textarea{
+    width: 100%;
+    margin-bottom: 1em;
+}

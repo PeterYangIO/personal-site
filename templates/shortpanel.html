@@ -1,7 +1,8 @@
 {% extends "bare_layout.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="ui.css">
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/shortpanel.css">
 {% endblock %}
 
 {% block content %}
@@ -17,8 +18,12 @@
 
     <div class="links">
         {% for link in links %}
-            <div><a href="{{ link.link }}" target="_blank">{{ link.link }}</a></div>
-            <div><span onclick="popup('{{ link.short }}')">{{ link.short }}</span><img src="edit.svg" onclick="edit('{{ link.short }}')"></div>
+        <div class="link">
+            <div class="full"><a href="{{ link.link }}" target="_blank">{{ link.link }}</a></div>
+            <div class="short" onclick="popup('{{ link.short }}')">{{ link.short }}</div>
+            <div class="clicks">{{ link.clicks }}</div>
+            <img src="/img/edit.svg" onclick="edit('{{ link.short }}')">
+        </div>
         {% endfor %}
     </div>
 
@@ -67,5 +72,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="script.js"></script>
+<script src="/scripts/shortpanel.js"></script>
 {%endblock%}
