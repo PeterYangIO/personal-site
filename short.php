@@ -11,6 +11,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
 $db = new Database();
 $short = substr($_GET["val"], 1);
 $data = $db->selectShortLink($short);
+$db->updateClicks($short);
 
 if ($data["link"]) {
     $title = htmlspecialchars($data["title"], ENT_QUOTES);

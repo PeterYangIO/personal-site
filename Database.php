@@ -85,7 +85,10 @@ class Database
         ];
     }
 
-
+    /**
+     * Used for /shortpanel
+     * @return array|null [ link, short ]
+     */
     public function selectShortLinks() {
         $data = [];
         $query = $this->db->prepare("SELECT link, short FROM short_links ORDER BY short");
@@ -100,6 +103,25 @@ class Database
         $query->close();
 
         return $data;
+    }
+
+    /**
+     * When accessing the shortened link, the click counter will be incremented
+     * @param string $short
+     * @return bool success
+     */
+    public function updateClicks(string $short) {
+        $query = $this->db->prepare("UPDATE short_links SET clicks=clicks + 1 WHERE short=?");
+
+        if (!$query) return false;
+
+        $query->bind_param("s", $short);
+
+        if (!$query->execute()) return false;
+
+        $query->close();
+
+        return true;
     }
 
     /**
