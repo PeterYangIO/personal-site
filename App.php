@@ -15,8 +15,10 @@ class App
      * @param string $message
      */
     public static function sendEmail(string $to, string $subject, string $message) {
-        $mg = Mailgun::create(MAILGUN_KEY);
-        $mg->messages()->send("pya.ng", [
+        $mailgun = new Mailgun(MAILGUN_KEY);
+
+        $domain = "pya.ng";
+        $mailgun->sendMessage($domain, [
             "from" => WEBUSER,
             "to" => $to,
             "subject" => $subject,
