@@ -1,24 +1,24 @@
 {% extends "bare_layout.html" %}
 
 {% block head %}
-<script src="/scripts/onload.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}
+
 {% block content %}
 <div class="background">
     <div class="row">
         <div class="col-4" id="white-container">
             <a onclick="setDisplay('#main')" id="back-button" style="display: none"></a>
             <div class="white-content" id="main">
-                <div class="fade-on-load vertical-center"> <img src="img/logo.svg" id="logo">
+                <div class="fade-on-load vertical-center"> <img src="/img/logo.svg" id="logo">
                     <h1>Peter Yang</h1>
                     <p>Hi. I'm an art driven techie and a tech driven artist.</p>
                     <p><a onclick="setDisplay('#about')">about</a> || <a onclick="setDisplay('#contact')">contact</a> || <a href="docs/resume.pdf" target="_blank">resume</a></p>
                     <div class="external-links">
-                        <a href="https://github.com/PeterYang1625/" target="_blank"><img src="img/github.svg"></a>
+                        <a href="https://github.com/PeterYang1625/" target="_blank"><img src="/img/github.svg"></a>
                         <a href="https://www.linkedin.com/in/peter-yang-51672b119" target="_blank"><img src="/img/linkedin.svg"></a>
                         <a href="https://www.youtube.com/channel/UC7bn50F_ujOrD6UerbAtlXw" target="_blank"><img src="/img/youtube.svg"></a>
-                        <a href="mailto:me@peteryang.io"><img src="img/email.svg"></a>
+                        <a href="mailto:me@peteryang.io"><img src="/img/email.svg"></a>
                     </div>
                     <a href="#black-container">
                         <div class="accent-circle hide-on-desktop" id="see-more"><img src="/img/icon-downarrow.svg"></div>
@@ -58,7 +58,7 @@
                 <div class="programming row">
                     <div class="col-4 hide-on-mobile"> <img src="/img/code.svg"> </div>
                     <div class="col-8">
-                        <h2>Programming &amp; IT</h2>
+                        <h2>Software</h2>
                         <h3>Web Development &amp; Design</h3>
                         <h3>Software Development</h3>
                         <h3>Server &amp; Database Control</h3>
@@ -100,23 +100,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script>
-    if (window.location.hash) {
-        setTimeout(setHashDisplay, 1000);
-    }
-
-    function setHashDisplay() {
-        var hash = window.location.hash.substring(1);
-        switch (hash) {
-            case 'about':
-                setDisplay('#about');
-                break;
-            case 'contact':
-                setDisplay('#contact');
-                break;
-            default:
-                console.log('Hash does not match any available content');
-        }
-    }
-</script>
+<script src="/scripts/onload.js"></script>
 {% endblock %}

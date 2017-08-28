@@ -84,32 +84,6 @@ body {
     padding: 15px;
 }
 
-.grid-twelfth {
-    width: 8.33%;
-}
-
-.grid-sixth {
-    width: 16.66%;
-}
-
-.grid-fourth {
-    width: 25%;
-}
-
-.grid-third {
-    width: 33.33%;
-}
-
-.grid-half {
-    width: 50%;
-}
-
-[class*="grid-"] {
-    display: inline-block;
-    vertical-align: top;
-    padding: 30px;
-}
-
 .row {
     clear: both;
 }
@@ -170,17 +144,17 @@ h6 {
 
 h1 {
     text-align: center;
-    font-size: 6em;
+    font-size: 5rem;
     font-weight: 100;
 }
 
 h2 {
-    font-size: 4em;
+    font-size: 3rem;
     font-weight: 700;
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 1.5rem;
     font-weight: 100;
 }
 
@@ -196,7 +170,7 @@ ul {
 #black-container {
     display: flex;
     flex-direction: column;
-    padding: 0px;
+    padding: 0;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
@@ -215,15 +189,6 @@ ul {
 
 #black-container .row:hover {
     padding-left: 2em;
-}
-
-#black-container .row .col-4,
-#black-container .row .col-8 {
-    /*
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-*/
 }
 
 #black-container .col-4 {
@@ -261,12 +226,12 @@ ul {
 }
 
 .accent-circle {
-    margin: 2em auto 0;
-    width: 4em;
-    height: 4em;
+    margin: 0 auto 0;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     background: #222;
-    padding: 1em;
+    padding: 0.5rem;
     transition: all 0.25s;
     animation: updown 2s infinite;
 }
@@ -522,19 +487,45 @@ button:hover {
         width: 33.33%;
     }
     h1 {
-        font-size: 4em;
+        font-size: 4rem;
     }
     h2 {
-        font-size: 3em;
+        font-size: 2.5rem;
     }
     h3 {
-        font-size: 1.5em;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 492px) {
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4 {
+        width: 100%;
+    }
+    #black-container .row .col-4,
+    #black-container .row .col-8 {
+        width: 100%;
+        text-align: center;
+    }
+    .white-content #logo {
+        width: 33.33%;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+    button {
+        width: 100%;
     }
 }
 
 @media (max-width: 1000px) {
     #black-container .row:hover {
-        padding-left: 0em;
+        padding-left: 0;
         opacity: .85;
     }
 }
@@ -565,32 +556,6 @@ button:hover {
     }
     .hide-on-desktop {
         display: block;
-    }
-}
-
-@media (max-width: 492px) {
-    .col-1,
-    .col-2,
-    .col-3,
-    .col-4 {
-        width: 100%;
-    }
-    #black-container .row .col-4,
-    #black-container .row .col-8 {
-        width: 100%;
-        text-align: center;
-    }
-    .white-content #logo {
-        width: 33.33%;
-    }
-    h1 {
-        font-size: 4em;
-    }
-    .hide-on-mobile {
-        display: none;
-    }
-    button {
-        width: 100%;
     }
 }
 

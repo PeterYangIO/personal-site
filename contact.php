@@ -25,10 +25,8 @@ $crd = json_decode($cr);
 
 if ($crd === null || !$crd->success) {
     $_SESSION["flash"] = "A verification error occurred";
-    echo "A verification error occurred";
 } else {
     App::sendEmail(MAIL_RECEIVER, $subject, $message);
     $_SESSION["flash"] = "Sent!";
-    echo "Sent!";
 }
-// header("Location: " . $_SERVER["DOCUMENT_ROOT"]);
+ header("Location: /");
