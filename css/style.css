@@ -530,45 +530,6 @@ button:hover {
     }
 }
 
-@media print,
-(max-width: 768px),
-(orientation: portrait) {
-    .white-content #logo {
-        width: 25%;
-    }
-    #black-container {
-        height: initial;
-    }
-    #black-container .row {
-        padding: 4em 0;
-    }
-    h1 {
-        font-size: 6em;
-    }
-    [class*="col-"] {
-        width: 100%;
-    }
-    #black-container .row .col-4 {
-        width: 33.33%;
-    }
-    #black-container .row .col-8 {
-        width: 66.66%;
-    }
-    .hide-on-desktop {
-        display: block;
-    }
-}
-
-@media print {
-    * {
-        opacity: 1;
-        color: black;
-    }
-    .hide-on-mobile {
-        display: none;
-    }
-}
-
 @keyframes updown {
     0% {
         transform: translateY(0);
