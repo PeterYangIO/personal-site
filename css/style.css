@@ -501,7 +501,7 @@ button:hover {
     .col-1,
     .col-2,
     .col-3,
-    .col-4 {
+    .col-4, .col-8 {
         width: 100%;
     }
     #black-container .row .col-4,
@@ -514,6 +514,9 @@ button:hover {
     }
     h1 {
         font-size: 3rem;
+    }
+    .hide-on-desktop {
+        display: block;
     }
     .hide-on-mobile {
         display: none;
