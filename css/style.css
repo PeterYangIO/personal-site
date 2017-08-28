@@ -501,7 +501,7 @@ button:hover {
     .col-1,
     .col-2,
     .col-3,
-    .col-4, .col-8 {
+    .col-4, .col-6, .col-8 {
         width: 100%;
     }
     #black-container .row .col-4,

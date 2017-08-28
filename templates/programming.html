@@ -1,20 +1,44 @@
 {% extends "base_layout.html" %}
 
 {% block content %}
-<div class="row">
-    <div class="container">
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2>Doctors 24x7</h2>
+            <h3>telehealth system</h3>
+            <p>Meeting online with a doctor is more than just setting up a Skype call. <a href="http://urgentcareac.com/">A & C Urgent Care</a> needed a custom built solution that would allow patients to input their information into a system that would seamlessly match them with a healthcare provider.</p>
+            <p>This project was built from the ground up to let patients provide medical history and conditions to a provider who would then meet them in a video call and return a treatment plan.</p>
+            <p>Expect launch: September 2017</p>
+        </div>
+        <div class="col-6">
+            <a href="https://doctors24x7.com" target="_blank"><img src="../portfolio/files/doctors.jpg"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h2>Hacktech 2017</h2>
+            <h3>Computer Vision vs. Human Conversation</h3>
+            <p>Vision API in its current state is rather impressive but we can only get so much data from it. Though it can look at the image and guess what is in it, it fails to make any connection between images. We have accomplished this and went on to compare it to what a user community interpreted it as.</p>
+            <p>For our image source, we took top images from popular subreddits and fed them into Microsoft's Computer Vision API. The API would return a JSON, providing guesses of what was inside of the image and a related confidence value. Using this JSON information and many other images, we created a graph correlating images to one another. We would take matching pairs of word descriptors (from the vision API), their respective confidence values, and average it all out to come up with a similarity value from 0 to 1 between any image.</p>
+            <p>Next, since we took these images directly from Reddit, we were able to use Reddit's API to scrape the comments from the thread. We analyzed the frequencies of words and compared them to the frequencies of words to other threads and also assigned a similarity value from 0 to 1.</p>
+        </div>
+        <div class="col-6">
+            <a href="https://github.com/mduong15/Hacktech2017" target="_blank"><img src="../portfolio/files/hacktech.jpg"></a>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-6">
             <h2>Acclaim Academic Institute</h2>
             <h3>website for an international tutoring firm</h3>
-            <p>Though currently under construction, this website was built from the ground up to accommodate the needs of both customers and staff. A backend system allows managers to keep track of tutors and students remotely.</p>
+            <p>Acclaim needed software that would help them process payroll by ensuring all tutors submitted the proper time sheets that corresponded with the students they were scheduled to. Manual tallying of hours on the tutor and student side took many hours per pay cycle and was very error prone.</p>
+            <p>This full stack solution built with PHP, MySQL, and React.js automated payroll while providing a much more user friendly experience for the staff.</p>
+            <p>Additionally, a customer facing website was created to help transition this brick and mortar tutoring firm to an online business, reaching students across the seas.</p>
         </div>
         <div class="col-6">
-            <a href="https://acclaimtutor.com" target="_blank"><img src="../portfolio/files/acclaim.png"></a>
+            <a href="https://acclaimtutor.com" target="_blank"><img src="../portfolio/files/acclaim.jpg"></a>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="container">
+    <div class="row">
         <div class="col-6">
             <h2>Bready</h2>
             <h3>website for fbla website design competition</h3>
@@ -25,9 +49,7 @@
             <a href="https://bready.xyz" target="_blank"><img src="../portfolio/files/bready.jpg"></a>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="container">
+    <div class="row">
         <div class="col-6">
             <h2>BlockParty</h2>
             <h3>website for virtual enterprises</h3>
@@ -38,9 +60,7 @@
             <a href="https://blockparty.peteryang.io" target="_blank"><img src="../portfolio/files/ve.jpg"></a>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="container">
+    <div class="row">
         <div class="col-6">
             <h2>Video Player</h2>
             <h3>for live a/v synchronization</h3>
@@ -52,4 +72,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
