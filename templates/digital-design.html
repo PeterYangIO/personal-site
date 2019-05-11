@@ -5,7 +5,7 @@
 <div class="row">
     <div class="container">
         <div class="col-6">
-            <h2></h2>
+            <h2>Virtual Reality Game Assets</h2>
             <h3>for Ascend Game</h3>
             <p>Provided 3D prop assets notably the "Mufid Gun" for one of USC's advanced game projects for the 2019 year.</p>
             <p>Learn more: <a href="https://ascendtovictory.com/">ascendtovictory.com</a></p>
@@ -111,7 +111,7 @@
     var mufidRender = document.getElementById("mufid-gun-render");
     var mufidIngame = document.getElementById("mufid-gun-ingame");
     var index = 0;
-    setTimeout(function() {
+    setInterval(function() {
         if (index === 0) {
             mufidRender.style.display = "block";
             mufidIngame.style.display = "none";
