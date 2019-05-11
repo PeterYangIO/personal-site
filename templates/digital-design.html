@@ -1,6 +1,29 @@
 {% extends "base_layout.html" %}
 
 {% block content %}
+<!-- Ascend -->
+<div class="row">
+    <div class="container">
+        <div class="col-6">
+            <h2></h2>
+            <h3>for Ascend Game</h3>
+            <p>Provided 3D prop assets notably the "Mufid Gun" for one of USC's advanced game projects for the 2019 year.</p>
+            <p>Learn more: <a href="https://ascendtovictory.com/">ascendtovictory.com</a></p>
+        </div>
+        <div class="col-6">
+            <img
+                    alt="mufid gun render"
+                    id="mufid-gun-render"
+                    src="../portfolio/files/mufid-gun-render.jpg"
+                    style="display: block;"/>
+            <img
+                    alt="mufid gun in game"
+                    id="mufid-gun-ingame"
+                    src="../portfolio/files/mufid-gun-ingame.jpg"
+                    style="display: none;"/>
+        </div>
+    </div>
+</div>
 <!-- FRC -->
 <div class="row">
     <div class="container">
@@ -41,7 +64,11 @@
             <h3>sweater mockup</h3>
             <p>This is a vector mockup for a sweater making use of one ink color and negative space to create a design.</p>
         </div>
-        <div class="col-6"> <img src="../portfolio/files/imcsweater.jpg"> </div>
+        <div class="col-6">
+            <img
+                    alt="sweater mockup for instrumental music"
+                    src="../portfolio/files/imcsweater.jpg">
+        </div>
     </div>
 </div>
 
@@ -70,7 +97,31 @@
             <h3>for the physics department</h3>
             <p>My Physics teacher asked me to create a digital version of a handdrawn concept another student made. I decided to redraw it in 3D space and did some post-compositing in Photoshop.</p>
         </div>
-        <div class="col-6"> <img src="../portfolio/files/waterbottle.jpg"> </div>
+        <div class="col-6">
+            <img
+                    alt="3d render of egg in a water bottle launch"
+                    src="../portfolio/files/waterbottle.jpg"/>
+        </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var mufidRender = document.getElementById("mufid-gun-render");
+    var mufidIngame = document.getElementById("mufid-gun-ingame");
+    var index = 0;
+    setTimeout(function() {
+        if (index === 0) {
+            mufidRender.style.display = "block";
+            mufidIngame.style.display = "none";
+            index = 1;
+        }
+        else {
+            mufidRender.style.display = "none";
+            mufidIngame.style.display = "block";
+            index = 0;
+        }
+    }, 5000);
+</script>
 {% endblock %}
