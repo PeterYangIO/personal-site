@@ -1,6 +1,6 @@
 <?php
 session_start();
-require($_SERVER["DOCUMENT_ROOT"] . "src/App.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/src/App.php");
 
 $from = $_POST["from"];
 $email = $_POST["email"];

@@ -1,5 +1,5 @@
 <?php
-require($_SERVER["DOCUMENT_ROOT"] . "src/LinkShortener.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/src/LinkShortener.php");
 
 $ls = new LinkShortener();
 
