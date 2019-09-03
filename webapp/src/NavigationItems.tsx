@@ -20,7 +20,7 @@ const NavigationItems: React.FC<INavigationItemsProps> = (props: INavigationItem
         <div className="navigation-items">
             <div className="menu-header">{props.header}</div>
             {
-                props.links.map((item: INavigationItem) => {
+                props.links.map((item: INavigationItem, index: number): JSX.Element => {
                     const Child: React.FC = (): JSX.Element => (
                         <>
                             <FontAwesomeIcon
@@ -37,6 +37,7 @@ const NavigationItems: React.FC<INavigationItemsProps> = (props: INavigationItem
                             <a
                                 className="menu-option"
                                 href={item.href}
+                                key={index}
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
@@ -49,6 +50,7 @@ const NavigationItems: React.FC<INavigationItemsProps> = (props: INavigationItem
                             <NavLink
                                 activeClassName="active"
                                 className="menu-option"
+                                key={index}
                                 to={item.href}
                             >
                                 <Child/>

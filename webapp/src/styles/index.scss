@@ -1,5 +1,18 @@
 @import "constants";
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,8 +21,12 @@
   font-size: 18px;
 }
 
+header {
+  margin-bottom: 2rem;
+}
+
 body {
-  background-image: linear-gradient(to top right, adjust-color($blue, $alpha: -0.5), adjust_color($pink, $alpha: -0.5)), url("../img/background.svg");
+  background-image: linear-gradient(to top right, adjust-color($blue, $alpha: -0.25), adjust_color($pink, $alpha: -0.25)), url("../img/background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -23,4 +40,9 @@ h1 {
 h2 {
   font-size: $text-large;
   font-weight: $text-light;
+}
+
+h3 {
+  font-size: $text-large;
+  $font-weight: $text-bold;
 }

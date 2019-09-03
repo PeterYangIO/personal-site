@@ -1,0 +1,17 @@
+@import "constants";
+
+.main-content {
+  background: white;
+  border-radius: $border-radius;
+  width: 100%;
+
+  img {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    width: 100%;
+  }
+
+  .body {
+    padding: 2rem;
+  }
+}

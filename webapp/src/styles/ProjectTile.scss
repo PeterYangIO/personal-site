@@ -1,0 +1,13 @@
+@import "constants";
+
+.project-tile {
+  align-items: flex-end;
+  background: white;
+  border-radius: $border-radius;
+  display: flex;
+  height: 175px;
+  margin-right: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+  width: 175px;
+}
