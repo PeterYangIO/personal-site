@@ -10,25 +10,25 @@
         <div class="col-4" id="white-container">
             <a onclick="setDisplay('#main')" id="back-button" style="display: none"></a>
             <div class="white-content" id="main">
-                <div class="fade-on-load vertical-center"> <img src="/img/logo.svg" id="logo">
+                <div class="fade-on-load vertical-center"> <img src="/static/img/logo.svg" id="logo">
                     <h1>Peter Yang</h1>
                     <p>Hi. I'm an art driven techie and a tech driven artist.</p>
                     <p><a onclick="setDisplay('#about')">about</a> || <a onclick="setDisplay('#contact')">contact</a> || <a href="docs/resume.pdf" target="_blank">resume</a></p>
                     <div class="external-links">
-                        <a href="https://github.com/peteryangio/" target="_blank"><img src="/img/github.svg"></a>
-                        <a href="https://www.linkedin.com/in/peter-yang-51672b119" target="_blank"><img src="/img/linkedin.svg"></a>
-                        <a href="https://www.youtube.com/channel/UC7bn50F_ujOrD6UerbAtlXw" target="_blank"><img src="/img/youtube.svg"></a>
-                        <a href="mailto:me@peteryang.io"><img src="/img/email.svg"></a>
+                        <a href="https://github.com/peteryangio/" target="_blank"><img src="/static/img/github.svg"></a>
+                        <a href="https://www.linkedin.com/in/peter-yang-51672b119" target="_blank"><img src="/static/img/linkedin.svg"></a>
+                        <a href="https://www.youtube.com/channel/UC7bn50F_ujOrD6UerbAtlXw" target="_blank"><img src="/static/img/youtube.svg"></a>
+                        <a href="mailto:me@peteryang.io"><img src="/static/img/email.svg"></a>
                     </div>
                     <a href="#black-container">
-                        <div class="accent-circle hide-on-desktop" id="see-more"><img src="/img/icon-downarrow.svg"></div>
+                        <div class="accent-circle hide-on-desktop" id="see-more"><img src="/static/img/icon-downarrow.svg"></div>
                     </a>
                 </div>
             </div>
             <div class="hidden white-content" id="contact">
                 <div id="contact-form" class="vertical-center">
                     <h2>Contact</h2>
-                    <form action="/contact.php" method="POST">
+                    <form action="/contact" method="POST">
                         <div class="space"></div>
                         <input type="text" name="from" placeholder="Name" required>
                         <div class="space"></div>
@@ -56,7 +56,7 @@
         <div class="col-8" id="black-container">
             <a href="/programming">
                 <div class="programming row">
-                    <div class="col-4 hide-on-mobile"> <img src="/img/code.svg"> </div>
+                    <div class="col-4 hide-on-mobile"> <img src="/static/img/code.svg"> </div>
                     <div class="col-8">
                         <h2>Software</h2>
                         <h3>Web Development &amp; Design</h3>
@@ -68,7 +68,7 @@
             </a>
             <a href="/music">
                 <div class="orchestral row">
-                    <div class="col-4 hide-on-mobile"> <img src="/img/music.svg"> </div>
+                    <div class="col-4 hide-on-mobile"> <img src="/static/img/music.svg"> </div>
                     <div class="col-8">
                         <h2>Orchestral Music</h2>
                         <h3>Arranging</h3>
@@ -80,7 +80,7 @@
             </a>
             <a href="/digital-design">
                 <div class="digital-art row">
-                    <div class="col-4 hide-on-mobile"> <img src="/img/design.svg"> </div>
+                    <div class="col-4 hide-on-mobile"> <img src="/static/img/design.svg"> </div>
                     <div class="col-8">
                         <h2>Digital Design</h2>
                         <h3>Graphic Design</h3>
@@ -100,5 +100,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/scripts/onload.js"></script>
+<script src="/static/js/onload.js"></script>
 {% endblock %}
