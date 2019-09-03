@@ -1,8 +1,8 @@
 {% extends "bare_layout.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/shortpanel.css">
+<link rel="stylesheet" href="/static/css/reset.css">
+<link rel="stylesheet" href="/static/css/shortpanel.css">
 {% endblock %}
 
 {% block content %}
@@ -22,7 +22,7 @@
             <div class="full"><a href="{{ link.link }}" target="_blank">{{ link.link }}</a></div>
             <div class="short" onclick="popup('{{ link.short }}')">{{ link.short }}</div>
             <div class="clicks">{{ link.clicks }}</div>
-            <div class="edit-button"><img src="/img/edit.svg" onclick="edit('{{ link.short }}')"></div>
+            <div class="edit-button"><img src="/static/img/edit.svg" onclick="edit('{{ link.short }}')"></div>
         </div>
         <div class="card">
             <img src=" {{ link.image }}">
@@ -81,5 +81,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/scripts/shortpanel.js"></script>
+<script src="/static/js/shortpanel.js"></script>
 {%endblock%}
