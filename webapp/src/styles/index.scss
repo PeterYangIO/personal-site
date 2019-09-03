@@ -1,0 +1,26 @@
+@import "constants";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background-image: linear-gradient(to top right, adjust-color($blue, $alpha: -0.5), adjust_color($pink, $alpha: -0.5)), url("../img/background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  font-size: $text-xx-large;
+  font-weight: $text-bold;
+}
+
+h2 {
+  font-size: $text-large;
+  font-weight: $text-light;
+}
