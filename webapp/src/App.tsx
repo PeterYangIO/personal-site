@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/App.scss";
-import { BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import Orchestral from "./pages/Orchestral";
 import About from "./pages/About";
 import Contact from "./pages/Contact";

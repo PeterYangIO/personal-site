@@ -11,62 +11,62 @@ const Sidebar: React.FC = (): JSX.Element => {
                     Peter Yang
                 </div>
                 <NavigationItems
-                    header="me"
+                    header="Me"
                     links={[
                         {
-                            name: "about",
+                            name: "About",
                             href: "/",
                             icon: faUserCircle
                         },
                         {
-                            name: "contact",
+                            name: "Contact",
                             href: "/contact",
                             icon: faAddressBook
                         },
                         {
                             external: true,
-                            name: "resume",
+                            name: "Resume",
                             href: "/docs/resume.pdf",
                             icon: faFileAlt
                         }
                     ]}/>
                 <NavigationItems
-                    header="portfolio"
+                    header="Portfolio"
                     links={[
                         {
-                            name: "software",
+                            name: "Software",
                             href: "/software",
                             icon: faCode
                         },
                         {
-                            name: "orchestral music",
+                            name: "Orchestral music",
                             href: "/music",
                             icon: faMusic
                         },
                         {
-                            name: "digital design",
+                            name: "Digital design",
                             href: "/design",
                             icon: faPaintBrush
                         }
                     ]}/>
                 <NavigationItems
-                    header="links"
+                    header="Links"
                     links={[
                         {
                             external: true,
-                            name: "github",
+                            name: "GitHub",
                             href: "https://github.com/peteryangio",
                             icon: faGithub
                         },
                         {
                             external: true,
-                            name: "linkedin",
+                            name: "LinkedIn",
                             href: "https://www.linkedin.com/in/peteryangio",
                             icon: faLinkedin
                         },
                         {
                             external: true,
-                            name: "youtube",
+                            name: "YouTube",
                             href: "https://www.youtube.com/peteryang",
                             icon: faYoutube
                         }

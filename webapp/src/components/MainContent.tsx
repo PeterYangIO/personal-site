@@ -12,10 +12,10 @@ const MainContent: React.FC<IMainContentProps> = (props: IMainContentProps): JSX
         <div className="main-content shadow">
             {
                 props.img &&
-                    <img
-                        alt={props.title}
-                        src={props.img}
-                    />
+                <img
+                    alt={props.title}
+                    src={props.img}
+                />
             }
             <div className="body">
                 {props.title && <h3>{props.title}</h3>}
