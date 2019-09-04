@@ -46,3 +46,25 @@ h3 {
   font-size: $text-large;
   $font-weight: $text-bold;
 }
+
+input, textarea {
+  border: none;
+  border-bottom: 1px solid $text-muted;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.5rem;
+  resize: none;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: $text-bold;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}

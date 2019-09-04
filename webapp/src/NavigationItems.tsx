@@ -8,7 +8,7 @@ interface INavigationItemsProps {
     links: INavigationItem[];
 }
 
-interface INavigationItem {
+export interface INavigationItem {
     external?: boolean;
     href: string;
     icon: IconDefinition;
@@ -50,6 +50,7 @@ const NavigationItems: React.FC<INavigationItemsProps> = (props: INavigationItem
                             <NavLink
                                 activeClassName="active"
                                 className="menu-option"
+                                exact
                                 key={index}
                                 to={item.href}
                             >

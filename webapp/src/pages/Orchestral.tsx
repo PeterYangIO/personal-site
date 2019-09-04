@@ -22,7 +22,6 @@ const Orchestral: React.FC = (): JSX.Element => {
             />
             <MainContent
                 img="https://via.placeholder.com/1200x400"
-                text="Lorem"
                 title="Microsoft the Musical"
             />
         </Page>
