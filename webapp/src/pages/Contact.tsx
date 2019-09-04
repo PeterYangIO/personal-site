@@ -46,9 +46,7 @@ const Contact: React.FC = (): JSX.Element => {
                         rows={5}
                     />
                 </div>
-                <Button>
-                    submit
-                </Button>
+                <Button text="Submit"/>
             </MainContent>
         </Page>
     );

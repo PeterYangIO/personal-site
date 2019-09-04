@@ -1,15 +1,37 @@
 @import "_constants.scss";
 
-button.button {
-  border: none;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-  background: $blue;
-  padding: 0.25rem 1rem;
-  transition: opacity 0.5s;
+.button-group {
+  button {
+    margin-right: 1rem;
+  }
+
+  button:last-of-type {
+    margin-right: 0;
+  }
+}
+
+button {
+  &.button {
+    border: none;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    background: $blue;
+    padding: 0.5rem 1rem;
+    text-transform: lowercase;
+    transition: $transition;
+
+    &.secondary {
+      background: white;
+      border: 2px solid $blue;
+    }
+
+    &.secondary:hover {
+      background: $blue;
+    }
+  }
 
   &:hover {
     cursor: pointer;
-    opacity: 0.8;
+    opacity: $opacity;
   }
 }

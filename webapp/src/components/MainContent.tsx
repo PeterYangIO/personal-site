@@ -1,7 +1,10 @@
 import React from "react";
 import "../styles/MainContent.scss";
+import Button, {IButtonProps} from "./Button";
+import ButtonGroup from "./ButtonGroup";
 
 interface IMainContentProps {
+    actions?: IButtonProps[];
     children?: JSX.Element | JSX.Element[];
     img?: string;
     title?: string;
@@ -18,7 +21,21 @@ const MainContent: React.FC<IMainContentProps> = (props: IMainContentProps): JSX
                 />
             }
             <div className="body">
-                {props.title && <h3>{props.title}</h3>}
+                <div className={props.title ? "body-title" : ""}>
+                    {props.title && <h3>{props.title}</h3>}
+                    {
+                        props.actions &&
+                        <ButtonGroup>
+                            {
+                                props.actions.map((item: IButtonProps, index: number): JSX.Element => (
+                                    <Button
+                                        key={index}
+                                        {...item}/>
+                                ))
+                            }
+                        </ButtonGroup>
+                    }
+                </div>
                 {props.children}
             </div>
         </div>

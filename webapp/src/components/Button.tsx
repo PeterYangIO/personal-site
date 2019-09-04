@@ -1,14 +1,19 @@
 import React from "react";
 import "../styles/Button.scss";
 
-interface IButtonProps {
-    children?: JSX.Element | JSX.Element[] | string;
+export interface IButtonProps {
+    text: string;
+    onClick?: VoidFunction;
+    isSecondary?: boolean;
 }
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps): JSX.Element => {
     return (
-        <button className="button">
-            {props.children}
+        <button
+            className={`${props.isSecondary ? "button secondary" : "button"}`}
+            onClick={props.onClick}
+        >
+            {props.text}
         </button>
     );
 };

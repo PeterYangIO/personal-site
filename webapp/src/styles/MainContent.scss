@@ -13,5 +13,12 @@
 
   .body {
     padding: 2rem;
+
+    .body-title {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
   }
 }

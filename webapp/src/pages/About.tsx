@@ -6,7 +6,7 @@ const About: React.FC = (): JSX.Element => {
     return (
         <Page
             subtitle="Hi. I'm an art driven techie and a tech driven artist."
-            title="About">
+            title="Peter Yang">
             <MainContent>
                 <p>
                     I am a Senior studying Computer Science / Business Administration at the University of Southern California.

@@ -1,4 +1,10 @@
 .project-selector {
+  align-items: center;
   display: flex;
+  height: 200px;
   margin-bottom: 2rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

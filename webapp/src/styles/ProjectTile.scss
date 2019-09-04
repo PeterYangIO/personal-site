@@ -2,12 +2,28 @@
 
 .project-tile {
   align-items: flex-end;
-  background: white;
+  background: linear-gradient(to bottom right, $blue, $pink);
   border-radius: $border-radius;
+  cursor: pointer;
   display: flex;
+  flex-shrink: 0;
   height: 175px;
   margin-right: 2rem;
   padding: 0.5rem;
   text-align: center;
+  transition: $transition;
   width: 175px;
+
+  &.active {
+    height: 200px;
+    width: 200px;
+  }
+
+  &:hover {
+    opacity: $opacity;
+  }
+
+  .title {
+    width: 100%;
+  }
 }

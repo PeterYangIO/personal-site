@@ -1,18 +1,11 @@
 import React from "react";
-import {IconDefinition} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {NavLink} from "react-router-dom";
+import {INavigationItem} from "./models/INavigationItem";
 
 interface INavigationItemsProps {
     header: string;
     links: INavigationItem[];
-}
-
-export interface INavigationItem {
-    external?: boolean;
-    href: string;
-    icon: IconDefinition;
-    name: string;
 }
 
 const NavigationItems: React.FC<INavigationItemsProps> = (props: INavigationItemsProps): JSX.Element => {
