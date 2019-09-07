@@ -28,6 +28,11 @@ button {
     &.secondary:hover {
       background: $blue;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   &:hover {
