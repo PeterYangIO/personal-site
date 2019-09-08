@@ -12,7 +12,7 @@ interface IProjectSelectorProps {
 
 const ProjectSelector: React.FC<IProjectSelectorProps> = (props: IProjectSelectorProps): JSX.Element => {
     return (
-        <ScrollContainer>
+        <ScrollContainer className="scroll-container">
             <div className="project-selector">
                 {
                     props.projects.map((item: IProject, index: number): JSX.Element => {

@@ -8,17 +8,30 @@ interface IMainContentProps {
     children?: JSX.Element | JSX.Element[];
     img?: string;
     title?: string;
+    video?: string;
 }
 
 const MainContent: React.FC<IMainContentProps> = (props: IMainContentProps): JSX.Element => {
     return (
         <div className="main-content shadow">
             {
-                props.img &&
+                props.img && !props.video &&
                 <img
                     alt={props.title}
                     src={props.img}
                 />
+            }
+            {
+                props.video &&
+                    <div className="video-container">
+                        <video
+                            autoPlay
+                            controls
+                            loop
+                            poster={props.img}
+                            src={props.video}
+                        />
+                    </div>
             }
             <div className="body">
                 <div className={props.title ? "body-title" : ""}>

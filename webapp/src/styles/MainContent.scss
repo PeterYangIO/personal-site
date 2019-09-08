@@ -11,6 +11,12 @@
     width: 100%;
   }
 
+  .video-container {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    overflow: hidden;
+  }
+
   .body {
     padding: 2rem;
 

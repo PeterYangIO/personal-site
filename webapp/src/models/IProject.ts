@@ -5,4 +5,5 @@ export interface IProject {
     img?: string;
     title: string;
     text: string[];
+    video?: string;
 }

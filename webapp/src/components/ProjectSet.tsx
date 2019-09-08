@@ -21,6 +21,7 @@ const ProjectSet: React.FC<IProjectSetProps> = (props: IProjectSetProps): JSX.El
                 actions={project.actions}
                 img={project.img}
                 title={project.title}
+                video={project.video}
             >
                 {
                     project.text.map(
