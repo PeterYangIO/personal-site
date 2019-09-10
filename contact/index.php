@@ -25,8 +25,13 @@ $crd = json_decode($cr);
 
 if ($crd === null || !$crd->success) {
     $_SESSION["flash"] = "A verification error occurred";
+    http_response_code(403);
 } else {
     App::sendEmail(MAIL_RECEIVER, $subject, $message);
     $_SESSION["flash"] = "Sent!";
+    http_response_code(200);
 }
- header("Location: /");
+
+if ($_GET["v"] !== "3") {
+    header("Location: /");
+}
