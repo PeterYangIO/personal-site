@@ -12,6 +12,8 @@
   "require": {
     "twig/twig": "v2.4.3",
     "mailgun/mailgun-php": "2.3.4",
-    "php-http/guzzle6-adapter": "v1.1.1"
+    "php-http/guzzle6-adapter": "v1.1.1",
+    "ext-curl": "*",
+    "ext-json": "*"
   }
 }

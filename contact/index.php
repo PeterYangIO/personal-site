@@ -13,7 +13,7 @@ $ch = curl_init("https://www.google.com/recaptcha/api/siteverify");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, [
-    "secret" => RECAPTCHA_SECRET,
+    "secret" => $_GET["v"] === "3" ? RECAPTCHA_SECRET : RECAPTCHA_SECRET_V3,
     "response" => $_POST["g-recaptcha-response"],
     "remoteip" => $_SERVER["REMOTE_ADDR"]
 ]);
