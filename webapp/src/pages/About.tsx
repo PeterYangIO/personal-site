@@ -27,6 +27,9 @@ const About: React.FC = (): JSX.Element => {
                 <p>
                     In my free time I like to write music for orchestras.
                 </p>
+                <p>
+                    PS: I just redesigned my website to what you see here so some things may still be a work in progress (September 2019)
+                </p>
             </MainContent>
         </Page>
     );

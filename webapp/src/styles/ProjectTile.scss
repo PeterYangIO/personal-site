@@ -1,5 +1,8 @@
 @import "constants";
 
+$default-size: 175px;
+$expanded-size: 200px;
+
 .project-tile {
   align-items: flex-end;
   background: linear-gradient(to bottom right, $blue, $pink);
@@ -7,20 +10,22 @@
   cursor: pointer;
   display: flex;
   flex-shrink: 0;
-  height: 175px;
+  height: $default-size;
   margin-right: 2rem;
   padding: 0.5rem;
   text-align: center;
   transition: $transition;
-  width: 175px;
+  width: $default-size;
 
   &.active {
-    height: 200px;
-    width: 200px;
+    height: $expanded-size;
+    width: $expanded-size;
   }
 
   &:hover {
+    height: $expanded-size;
     opacity: $opacity;
+    width: $expanded-size;
   }
 
   .title {
