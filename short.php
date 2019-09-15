@@ -29,7 +29,7 @@ $data = [
     "url" => $_SERVER["HTTP_HOST"] . "/$short",
     "image" => isset($image) ? $image : null,
     "description" => isset($description) ? $description : null,
-    "error" => "/$short"
+    "error" => "/"
 ];
 
 echo $twig->render("short.html", $data);

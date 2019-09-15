@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/App.scss";
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route, Redirect} from "react-router-dom";
 import Orchestral from "./pages/Orchestral";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -35,6 +35,9 @@ const App: React.FC = (): JSX.Element => {
                         <Route
                             component={Design}
                             path="/design"
+                        />
+                        <Route
+                            render={(): JSX.Element => <Redirect to={`/short.php?val=/${window.location.pathname}`}/>}
                         />
                     </div>
                 </main>
