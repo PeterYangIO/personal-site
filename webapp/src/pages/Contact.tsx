@@ -72,7 +72,7 @@ const Contact: React.FC = (): JSX.Element => {
                                 subject,
                                 message,
                                 // @ts-ignore
-                                "g-captcha-response": window.GLOBAL_PETERYANGIO.recaptchaToken
+                                "g-recaptcha-response": window.GLOBAL_PETERYANGIO.recaptchaToken
                             })
                         });
                         if (response.ok) {
