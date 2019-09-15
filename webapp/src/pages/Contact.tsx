@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Page from "../components/Page";
 import MainContent from "../components/MainContent";
 import Button from "../components/Button";
+import "../styles/Contact.scss";
 
 const Contact: React.FC = (): JSX.Element => {
     const [name, setName] = useState("");
@@ -83,6 +84,11 @@ const Contact: React.FC = (): JSX.Element => {
                         }
                     }}
                     text="Submit"/>
+                <div className="recaptcha-disclaimer">
+                    This site is protected by reCAPTCHA and the Google{" "}
+                    <a href="https://policies.google.com/privacy">Privacy Policy</a>{" "}and{" "}
+                    <a href="https://policies.google.com/terms">Terms of Service</a>{" "}apply.
+                </div>
             </MainContent>
         </Page>
     );
