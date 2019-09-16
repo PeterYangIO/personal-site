@@ -62,7 +62,7 @@ const Contact: React.FC = (): JSX.Element => {
                 </div>
                 <Button
                     onClick={async () => {
-                        const response: Response = await fetch("/api/contact", {
+                        const response: Response = await fetch("/api/contact/", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
