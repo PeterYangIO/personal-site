@@ -1,6 +1,7 @@
 import React from "react";
 import Page from "../components/Page";
 import ProjectSet from "../components/ProjectSet";
+import Frozen2 from "../img/orchestral/frozen2.jpg";
 import MicrosoftTheMusical from "../img/orchestral/ms-musical.jpg";
 import ClassicalMusicMashup from "../img/orchestral/cmm.jpg";
 
@@ -10,6 +11,24 @@ const Orchestral: React.FC = (): JSX.Element => {
             subtitle="Orchestral arranging, music engraving, and realistic mock-ups"
             title="Orchestral Music">
             <ProjectSet projects={[
+                {
+                    actions: [
+                        {
+                            href: "https://www.youtube.com/watch?v=CYB5d7IC5Qk",
+                            text: "Watch"
+                        }
+                    ],
+                    img: Frozen2,
+                    title: "Frozen II Medley",
+                    text: [
+                        "Into the Unknown (brief intro)",
+                        "Show Yourself",
+                        "All Is Found",
+                        "Do You Want to Build a Snowman (brief reference)",
+                        "Into the Unknown",
+                        "Vuelie (theme) / Teaser Trailer Music / Conclusion"
+                    ]
+                },
                 {
                     actions: [
                         {
@@ -129,9 +148,12 @@ const Orchestral: React.FC = (): JSX.Element => {
                             text: "Watch"
                         }
                     ],
-                    title: "Frozen Medley for Full Orchestra",
+                    title: "Frozen Medley",
                     text: [
-                        "Do You Want to Build a Snowman - Let it Go - For the First Time in Forever - Do You Want to Build a Snowman"
+                        "Do You Want to Build a Snowman",
+                        "Let it Go",
+                        "For the First Time in Forever",
+                        "Do You Want to Build a Snowman"
                     ]
                 },
                 {

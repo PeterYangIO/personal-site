@@ -28,6 +28,7 @@ const MainContent: React.FC<IMainContentProps> = (props: IMainContentProps): JSX
                             autoPlay
                             controls
                             loop
+                            muted
                             poster={props.img}
                             src={props.video}
                         />
