@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 
-class Redirect extends Component {
+class Redirect extends React.Component {
     constructor(props: {}) {
         super(props);
         window.location.href = `/short.php?val=${window.location.pathname}`;

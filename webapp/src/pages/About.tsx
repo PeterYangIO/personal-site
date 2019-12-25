@@ -22,13 +22,9 @@ const About: React.FC = (): JSX.Element => {
                 </div>
                 <p>
                     I am a Senior studying Computer Science / Business Administration at the University of Southern California.
-                    I recently completed my internship as a Software Engineer Intern at Microsoft and I'm currently looking for full time opportunities.
                 </p>
                 <p>
                     In my free time I like to write music for orchestras.
-                </p>
-                <p>
-                    PS: I just redesigned my website to what you see here so some things may still be a work in progress (September 2019)
                 </p>
             </MainContent>
         </Page>

@@ -1,0 +1,16 @@
+@import "_constants.scss";
+
+.input {
+  label {
+    position: relative;
+    transition: $transition;
+
+    &.filled {
+      top: 0;
+    }
+
+    &.empty {
+      top: 1.6rem;
+    }
+  }
+}
