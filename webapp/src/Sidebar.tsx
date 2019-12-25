@@ -27,7 +27,10 @@ const Sidebar: React.FC = (): JSX.Element => {
                     icon={isOpen ? faTimes : faBars}
                 />
             </div>
-            <nav className={isOpen ? "" : "hide"}>
+            <nav
+                className={isOpen ? "" : "hide"}
+                onClick={() => setOpen(false)}
+            >
                 <div className="nav-links">
                     <div className="my-name">
                         Peter Yang
