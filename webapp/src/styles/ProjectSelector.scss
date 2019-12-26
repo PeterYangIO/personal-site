@@ -1,4 +1,7 @@
 .project-selector {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
   align-items: center;
   display: flex;
   height: 200px;

@@ -88,6 +88,10 @@
     .main-container {
       margin: auto;
       width: 75%;
+
+      @media screen and (max-width: $break-medium) {
+        width: 90%;
+      }
     }
 
     >:first-child {
