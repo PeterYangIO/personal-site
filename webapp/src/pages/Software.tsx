@@ -14,12 +14,28 @@ const Software: React.FC = (): JSX.Element => {
                 {
                     actions: [
                         {
+                            href: "https://devpost.com/software/twitchstonks",
+                            text: "Devpost"
+                        }
+                    ],
+                    title: "TwitchStonks",
+                    text: [
+                        "TwitchCon Hackathon 2019",
+                        "Visit the Devpost for more information"
+                    ]
+                },
+                {
+                    actions: [
+                        {
                             href: "https://devpost.com/software/hitch-n-ditch",
                             text: "Devpost"
                         }
                     ],
                     title: "Hitch 'n Ditch",
-                    text: []
+                    text: [
+                        "HackSC 2019",
+                        "Visit the Devpost for more information"
+                    ]
                 },
                 {
                     actions: [
@@ -29,7 +45,10 @@ const Software: React.FC = (): JSX.Element => {
                         }
                     ],
                     title: "Dog Instrucc",
-                    text: []
+                    text: [
+                        "SLOHacks 2019",
+                        "Visit the Devpost for more information"
+                    ]
                 },
                 {
                     actions: [
