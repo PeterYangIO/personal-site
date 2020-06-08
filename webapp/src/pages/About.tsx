@@ -3,6 +3,7 @@ import Page from "../components/Page";
 import MainContent from "../components/MainContent";
 import logo from "../img/logo.svg";
 import "../styles/About.scss";
+import {Link} from "react-router-dom";
 
 const About: React.FC = (): JSX.Element => {
     return (
@@ -21,12 +22,12 @@ const About: React.FC = (): JSX.Element => {
                     </div>
                 </div>
                 <p>
-                    I am a Senior studying Computer Science / Business Administration at the University of Southern California.
-                    On the side, I work as a Software Development Manager at <a href="https://acclaimtutor.com/">Acclaim Academic Institute</a> leading a small team of 4 developers.
+                    I am a recent Computer Science / Business Administration graduate from the University of Southern California.
+                    For now, I work as a Software Development Manager at <a href="https://acclaimtutor.com">Acclaim Academic Institute</a> leading a small team of 4 developers.
                     This upcoming August, I will be joining Microsoft as a full time Software Engineer.
                 </p>
                 <p>
-                    In my free time I like to write music for orchestras.
+                    In my free time I like to make orchestral arrangements of popular music (whether it's pop, film, or games) which you can check out samples of on my <Link to="/music">music page</Link>.
                 </p>
             </MainContent>
         </Page>
