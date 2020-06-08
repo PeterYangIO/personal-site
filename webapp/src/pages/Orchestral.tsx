@@ -1,11 +1,33 @@
 import React from "react";
 import Page from "../components/Page";
 import ProjectSet from "../components/ProjectSet";
+
+import Halo from "../img/orchestral/halo.jpg";
+import Lava from "../img/orchestral/lava.jpg";
 import Frozen2 from "../img/orchestral/frozen2.jpg";
 import MicrosoftTheMusical from "../img/orchestral/ms-musical.jpg";
 import ClassicalMusicMashup from "../img/orchestral/cmm.jpg";
+import Battlefield from "../img/orchestral/battlefield.jpg";
+import PPAP from "../img/orchestral/ppap.jpg";
+import Opus5 from "../img/orchestral/opus5.jpg";
+import Hebrides from "../img/orchestral/hebrides.jpg";
+import FirstOfTheYear from "../img/orchestral/firstyear.jpg";
+import Sandstorm from "../img/orchestral/sandstorm.jpg";
+import CounterpointOverWar from "../img/orchestral/counterpoint.jpg";
+import PianoEb from "../img/orchestral/pianoeb.jpg";
+import Frozen1 from "../img/orchestral/frozen1.jpg";
+import CompositionInG from "../img/orchestral/compg.jpg";
 
-const Orchestral: React.FC = (): JSX.Element => {
+import { withRouter, RouteComponentProps } from "react-router-dom";
+import {IButtonProps} from "../components/Button";
+
+const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): JSX.Element => {
+    const sheetMusicAction: IButtonProps = {
+        isSecondary: true,
+        onClick: () => props.history.push("contact"),
+        text: "Sheet music"
+    };
+
     return (
         <Page
             subtitle="Orchestral arranging, music engraving, and realistic mock-ups"
@@ -13,14 +35,52 @@ const Orchestral: React.FC = (): JSX.Element => {
             <ProjectSet projects={[
                 {
                     actions: [
+                        sheetMusicAction,
+                        {
+                            href: "",
+                            text: "Watch"
+                        }
+                    ],
+                    img: Halo,
+                    title: "Halo Orchestral Suite",
+                    text: [
+                        "The arrival of Halo: MCC on Steam re-ignited my interest in the series and with Halo Infinite coming out, I figured I'd put together an orchestral suite of some of the best OST tracks throughout the series thus far!",
+                        "\"Lone Wolf\" – Halo: Reach",
+                        "\"Behold a Pale Horse\" – Halo 3",
+                        "\"Halo Theme (Mjolnir Mix)\" – Halo 2",
+                        "\"The Trials\" – Halo 5: Guardians",
+                        "\"A Spartan Rises\" – Halo 2: Anniversary",
+                        "\"Never Forget\" – Halo 3",
+                        "\"Epilogue\" – Halo: Reach",
+                        "\"Finish the Fight\" – Halo 3"
+                    ]
+                },
+                {
+                    actions: [
+                        sheetMusicAction,
+                        {
+                            href: "https://www.youtube.com/watch?v=guM_ei-7LpE",
+                            text: "Watch"
+                        },
+                    ],
+                    img: Lava,
+                    title: "Lava",
+                    text: [
+                        "Orchestration of \"Lava\" from Disney Pixar's Lava which was featured right before the start of Inside Out!"
+                    ]
+                },
+                {
+                    actions: [
+                        sheetMusicAction,
                         {
                             href: "https://www.youtube.com/watch?v=CYB5d7IC5Qk",
                             text: "Watch"
                         }
                     ],
                     img: Frozen2,
-                    title: "Frozen II Medley",
+                    title: "Frozen 2 Medley",
                     text: [
+                        "A fun collection of themes from Frozen 2, arranged into an orchestral medley!",
                         "Into the Unknown (brief intro)",
                         "Show Yourself",
                         "All Is Found",
@@ -31,6 +91,16 @@ const Orchestral: React.FC = (): JSX.Element => {
                 },
                 {
                     actions: [
+                        {
+                            href: "https://open.spotify.com/track/4oJrppERZHu5fuIa22g0aF?si=cbvXWskBRLCMgJjCoQBN_w",
+                            isSecondary: true,
+                            text: "Audio"
+                        },
+                        {
+                            href: "https://www.youtube.com/watch?v=J2H4w_UWZ-A",
+                            isSecondary: true,
+                            text: "Sheet music"
+                        },
                         {
                             href: "https://www.youtube.com/watch?v=ZGeWNR8CWnA",
                             text: "Watch"
@@ -47,7 +117,7 @@ const Orchestral: React.FC = (): JSX.Element => {
                 {
                     actions: [
                         {
-                            href: "https://store.cdbaby.com/cd/peteryang",
+                            href: "https://open.spotify.com/album/6KyYM6Rcm8ksN5GltrzNFo?si=9bN6iWhmSl-XX5MSmwHvtw",
                             isSecondary: true,
                             text: "Audio"
                         },
@@ -72,13 +142,28 @@ const Orchestral: React.FC = (): JSX.Element => {
                 {
                     actions: [
                         {
-                            href: "https://www.youtube.com/watch?v=FYCiSArf43Q",
+                            href: "https://www.youtube.com/watch?v=Eb5iwda82uM",
                             text: "Watch"
                         }
                     ],
-                    title: "Dragonhearted",
+                    img: Battlefield,
+                    title: "Battlefield Theme",
                     text: [
-                        "A large amount of growth of my YouTube channel stemmed from my piano transcriptions / arrangements of the \"Fallen Kingdom\" series published by CaptainSparklez. Dragonhearted is the conclusion of the series so I made sure to make this arrangement special."
+                        "With the release of Battlefield 1, I decided to make an orchestral cover of the theme song, based off of the legacy 1942 theme.",
+                        "In this arrangement, I included an allusion to the Taps melody in respect for those who lost their lives during the World War. Battlefield 1 makes an amazing point of demonstrating the loss of lives particularly at the start of the campaign where you see names and death years of young men rather than simply respawning. The tragic events of World War I was not completely detrimental. In the aftermath of the war, America found ways to lighten the mood, and thus the Jazz Era was born. I hope you enjoy the little jazzy tidbit towards the end.",
+                    ]
+                },
+                {
+                    actions: [
+                        {
+                            href: "https://www.youtube.com/watch?v=4pFTuZxIdwQ",
+                            text: "Watch"
+                        }
+                    ],
+                    img: PPAP,
+                    title: "PPAP",
+                    text: [
+                        "Pen Pineapple Apple Pen by Pikotaro quickly went viral because of the ridiculousness of the whole concept. I figured since it was such a short snippet, I might as well orchestrate to get in on the fun!"
                     ]
                 },
                 {
@@ -88,6 +173,7 @@ const Orchestral: React.FC = (): JSX.Element => {
                             text: "Watch"
                         }
                     ],
+                    img: Opus5,
                     title: "Opus 5",
                     text: [
                         "This piece beings with a very dark mood and continues development with a heroic motif. At the conclusion of that phrase, a seemingly playful dance is heard before being taken over by the stomping march of darkness."
@@ -100,6 +186,7 @@ const Orchestral: React.FC = (): JSX.Element => {
                             text: "Watch"
                         }
                     ],
+                    img: Hebrides,
                     title: "Hebrides Overture",
                     text: [
                         "The Hebrides is a popular composition by Mendelssohn originally written for strings, double woodwinds, 2 natural horns, 2 trumpets, and 2 timpani. I felt like the fire of the beast within the cave could benefit from a more ferocious instrumentation so I rewrote the ending theme with an extensive instrumentation."
@@ -112,9 +199,23 @@ const Orchestral: React.FC = (): JSX.Element => {
                             text: "Watch"
                         }
                     ],
+                    img: FirstOfTheYear,
                     title: "First of the Year",
                     text: [
                         "This is a demonstration of how quickly I can produce orchestral scores. This composition was named as it is because it was written from start to finish - including all notation - within a day."
+                    ]
+                },
+                {
+                    actions: [
+                        {
+                            href: "https://www.youtube.com/watch?v=LKPgfmi25HI",
+                            text: "Watch"
+                        }
+                    ],
+                    img: Sandstorm,
+                    title: "Sandstorm",
+                    text: [
+                        "Around 2016, the YouTube comments section had a running joke where whenever someone asked \"Song name?\" they would be answered with \"Darude Sandstorm\" no matter what the actual song was. It was quite the meme so I put together a meme arrangement with MLG horns and hitmarkers to be released on April 1st as a joke."
                     ]
                 },
                 {
@@ -124,6 +225,7 @@ const Orchestral: React.FC = (): JSX.Element => {
                             text: "Watch"
                         }
                     ],
+                    img: CounterpointOverWar,
                     title: "Counterpoint Over War",
                     text: [
                         "This was an entry for the PTA Reflections contest. The theme was \"The world would be a better place if...\" and I decided to illustrate how music can make everything better. The battle between harsh dissonances and harmonic melodies symbolize the good of music."
@@ -136,6 +238,7 @@ const Orchestral: React.FC = (): JSX.Element => {
                             text: "Watch"
                         }
                     ],
+                    img: PianoEb,
                     title: "Piano & Winds in Eb",
                     text: [
                         "This is a slow piece for a woodwind quartet with little musical development throughout the piece while maintaining a calm mood"
@@ -148,6 +251,7 @@ const Orchestral: React.FC = (): JSX.Element => {
                             text: "Watch"
                         }
                     ],
+                    img: Frozen1,
                     title: "Frozen Medley",
                     text: [
                         "Do You Want to Build a Snowman",
@@ -163,6 +267,7 @@ const Orchestral: React.FC = (): JSX.Element => {
                             text: "Watch"
                         }
                     ],
+                    img: CompositionInG,
                     title: "Composition in G",
                     text: [
                         "An entry for the 2013-2014 PTA reflections contest. The theme was \"Inspire, Dream, Believe\"."
@@ -173,4 +278,4 @@ const Orchestral: React.FC = (): JSX.Element => {
     );
 };
 
-export default Orchestral;
+export default withRouter(Orchestral);
