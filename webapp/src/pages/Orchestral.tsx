@@ -2,6 +2,7 @@ import React from "react";
 import Page from "../components/Page";
 import ProjectSet from "../components/ProjectSet";
 
+import TwoSetDuet from "../img/orchestral/2setduet.jpg";
 import Halo from "../img/orchestral/halo.jpg";
 import Lava from "../img/orchestral/lava.jpg";
 import Frozen2 from "../img/orchestral/frozen2.jpg";
@@ -33,6 +34,23 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
             subtitle="Orchestral arranging, music engraving, and realistic mock-ups"
             title="Orchestral Music">
             <ProjectSet projects={[
+                {
+                    actions: [
+                        {
+                            href: "/docs/2Set%20Duet/2Set%20Duet.pdf",
+                            text: "Sheet music"
+                        },
+                        {
+                            href: "https://www.youtube.com/watch?v=pdNoHtQjgp4",
+                            text: "Watch"
+                        }
+                    ],
+                    img: TwoSetDuet,
+                    title: "2Set Duet, Op. 6",
+                    text: [
+                        "A fast, boisterous violin duet with double stops and open strings. Written for TwoSet when they made an open submission request on Twitter."
+                    ]
+                },
                 {
                     actions: [
                         sheetMusicAction,
