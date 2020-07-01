@@ -37,6 +37,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                 {
                     actions: [
                         {
+                            isSecondary: true,
                             href: "/docs/2Set%20Duet/2Set%20Duet.pdf",
                             text: "Sheet music"
                         },
