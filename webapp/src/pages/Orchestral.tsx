@@ -2,6 +2,7 @@ import React from "react";
 import Page from "../components/Page";
 import ProjectSet from "../components/ProjectSet";
 
+import September from "../img/orchestral/september.jpg";
 import TwoSetDuet from "../img/orchestral/2setduet.jpg";
 import Halo from "../img/orchestral/halo.jpg";
 import Lava from "../img/orchestral/lava.jpg";
@@ -26,28 +27,46 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
     const sheetMusicAction: IButtonProps = {
         isSecondary: true,
         onClick: () => props.history.push("contact"),
-        text: "Sheet music"
+        text: "📄 Sheet music"
     };
 
     return (
         <Page
             subtitle="Orchestral arranging, music engraving, and realistic mock-ups"
-            title="Orchestral Music">
+            title="Music">
             <ProjectSet projects={[
                 {
                     actions: [
                         {
                             isSecondary: true,
+                            href: "https://distrokid.com/hyperfollow/peteryang/september-for-orchestra-and-choir-feat-rahul-setty",
+                            text: "🎵 Stream"
+                        },
+                        {
+                            href: "https://www.youtube.com/watch?v=wBWZVAjQAws",
+                            text: "🎥 Watch"
+                        }
+                    ],
+                    img: September,
+                    title: "September for Orchestra and Choir",
+                    text: [
+                        "This marks my first project working directly with a vocalist and I could not be more thankful to have Rahul Setty to be the featured vocalist here. I certainly hope to bring on more live vocalists to my projects in the future so stay tuned!"
+                    ]
+                },
+                {
+                    actions: [
+                        {
+                            isSecondary: true,
                             href: "/docs/2Set%20Duet/2Set%20Duet.pdf",
-                            text: "Sheet music"
+                            text: "📄 Sheet music"
                         },
                         {
                             href: "https://www.youtube.com/watch?v=pdNoHtQjgp4",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: TwoSetDuet,
-                    title: "2Set Duet, Op. 6",
+                    title: "Violin Duet for TwoSet in D Major, Op. 6",
                     text: [
                         "A fast, boisterous violin duet with double stops and open strings. Written for TwoSet when they made an open submission request on Twitter."
                     ]
@@ -57,7 +76,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                         sheetMusicAction,
                         {
                             href: "https://www.youtube.com/watch?v=MWvYshoTiZk",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: Halo,
@@ -79,7 +98,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                         sheetMusicAction,
                         {
                             href: "https://www.youtube.com/watch?v=guM_ei-7LpE",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         },
                     ],
                     img: Lava,
@@ -93,7 +112,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                         sheetMusicAction,
                         {
                             href: "https://www.youtube.com/watch?v=CYB5d7IC5Qk",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: Frozen2,
@@ -113,16 +132,16 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                         {
                             href: "https://open.spotify.com/track/4oJrppERZHu5fuIa22g0aF?si=cbvXWskBRLCMgJjCoQBN_w",
                             isSecondary: true,
-                            text: "Audio"
+                            text: "🎵 Stream"
                         },
                         {
                             href: "https://www.youtube.com/watch?v=J2H4w_UWZ-A",
                             isSecondary: true,
-                            text: "Sheet music"
+                            text: "📄 Sheet music"
                         },
                         {
                             href: "https://www.youtube.com/watch?v=ZGeWNR8CWnA",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: MicrosoftTheMusical,
@@ -138,16 +157,16 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                         {
                             href: "https://open.spotify.com/album/6KyYM6Rcm8ksN5GltrzNFo?si=9bN6iWhmSl-XX5MSmwHvtw",
                             isSecondary: true,
-                            text: "Audio"
+                            text: "🎵 Stream"
                         },
                         {
                             href: "https://www.jwpepper.com/sheet-music/search.jsp?keywords=Classical+Music+Mashup+Peter+Yang",
                             isSecondary: true,
-                            text: "Sheet music"
+                            text: "📄 Sheet music"
                         },
                         {
                             href: "https://www.youtube.com/watch?v=sSYRCBK13Kk",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: ClassicalMusicMashup,
@@ -162,7 +181,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=Eb5iwda82uM",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: Battlefield,
@@ -176,7 +195,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=4pFTuZxIdwQ",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: PPAP,
@@ -189,7 +208,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=jq_yuJ7ClGY",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: Opus5,
@@ -202,7 +221,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=qWDWLrXNJRs",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: Hebrides,
@@ -215,7 +234,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=WXEVlneZDdk",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: FirstOfTheYear,
@@ -228,7 +247,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=LKPgfmi25HI",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: Sandstorm,
@@ -241,7 +260,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=yNl6LcSIwjE",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: CounterpointOverWar,
@@ -254,7 +273,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=tThQDDgDw24",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: PianoEb,
@@ -267,7 +286,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=1cx7A2Fc0bQ",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: Frozen1,
@@ -283,7 +302,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     actions: [
                         {
                             href: "https://www.youtube.com/watch?v=E0ORNaTgavw",
-                            text: "Watch"
+                            text: "🎥 Watch"
                         }
                     ],
                     img: CompositionInG,

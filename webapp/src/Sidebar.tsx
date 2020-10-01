@@ -64,12 +64,12 @@ const Sidebar: React.FC = (): JSX.Element => {
                                 icon: faCode
                             },
                             {
-                                name: "Orchestral music",
+                                name: "Music",
                                 href: "/music",
                                 icon: faMusic
                             },
                             {
-                                name: "Digital design",
+                                name: "Design",
                                 href: "/design",
                                 icon: faPaintBrush
                             }
