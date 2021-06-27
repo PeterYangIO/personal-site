@@ -11,10 +11,7 @@ interface IPageProps {
 const Page: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
     return (
         <div className={props.className}>
-            <Header
-                subtitle={props.subtitle}
-                title={props.title}
-            />
+            <Header subtitle={props.subtitle} title={props.title} />
             {props.children}
         </div>
     );

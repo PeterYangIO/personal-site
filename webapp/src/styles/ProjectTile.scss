@@ -4,31 +4,31 @@ $default-size: 175px;
 $expanded-size: 200px;
 
 .project-tile {
-  align-items: flex-end;
-  background: linear-gradient(to bottom right, $blue, $pink);
-  border-radius: $border-radius;
-  cursor: pointer;
-  display: flex;
-  flex-shrink: 0;
-  height: $default-size;
-  margin-right: 2rem;
-  padding: 0.5rem;
-  text-align: center;
-  transition: $transition;
-  width: $default-size;
+    align-items: flex-end;
+    background: linear-gradient(to bottom right, $blue, $pink);
+    border-radius: $border-radius;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    height: $default-size;
+    margin-right: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+    transition: $transition;
+    width: $default-size;
 
-  &.active {
-    height: $expanded-size;
-    width: $expanded-size;
-  }
+    &.active {
+        height: $expanded-size;
+        width: $expanded-size;
+    }
 
-  &:hover {
-    height: $expanded-size;
-    opacity: $opacity;
-    width: $expanded-size;
-  }
+    &:hover {
+        height: $expanded-size;
+        opacity: $opacity;
+        width: $expanded-size;
+    }
 
-  .title {
-    width: 100%;
-  }
+    .title {
+        width: 100%;
+    }
 }

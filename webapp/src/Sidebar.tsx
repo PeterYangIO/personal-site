@@ -1,40 +1,20 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import NavigationItems from "./NavigationItems";
-import {
-    faAddressBook,
-    faBars,
-    faCode,
-    faFileAlt,
-    faMusic,
-    faPaintBrush,
-    faTimes,
-    faUserCircle
-} from "@fortawesome/free-solid-svg-icons";
-import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faAddressBook, faBars, faMusic, faPaintBrush, faTimes, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faApple, faGithub, faLinkedin, faSpotify, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Sidebar: React.FC = (): JSX.Element => {
     const [isOpen, setOpen] = useState(false);
 
     return (
         <>
-            <div
-                id="nav-icon"
-                onClick={() => setOpen(!isOpen)}
-            >
-                <FontAwesomeIcon
-                    fixedWidth
-                    icon={isOpen ? faTimes : faBars}
-                />
+            <div id="nav-icon" onClick={() => setOpen(!isOpen)}>
+                <FontAwesomeIcon fixedWidth icon={isOpen ? faTimes : faBars} />
             </div>
-            <nav
-                className={isOpen ? "" : "hide"}
-                onClick={() => setOpen(false)}
-            >
+            <nav className={isOpen ? "" : "hide"} onClick={() => setOpen(false)}>
                 <div className="nav-links">
-                    <div className="my-name">
-                        Peter Yang
-                    </div>
+                    <div className="my-name">Peter Yang</div>
                     <NavigationItems
                         header="Me"
                         links={[
@@ -47,22 +27,12 @@ const Sidebar: React.FC = (): JSX.Element => {
                                 name: "Contact",
                                 href: "/contact",
                                 icon: faAddressBook
-                            },
-                            {
-                                external: true,
-                                name: "Resume",
-                                href: "/docs/resume.pdf",
-                                icon: faFileAlt
                             }
-                        ]}/>
+                        ]}
+                    />
                     <NavigationItems
-                        header="Portfolio"
+                        header="Projects"
                         links={[
-                            {
-                                name: "Software",
-                                href: "/software",
-                                icon: faCode
-                            },
                             {
                                 name: "Music",
                                 href: "/music",
@@ -73,15 +43,39 @@ const Sidebar: React.FC = (): JSX.Element => {
                                 href: "/design",
                                 icon: faPaintBrush
                             }
-                        ]}/>
+                            // {
+                            //     name: "Software",
+                            //     href: "/software",
+                            //     icon: faCode
+                            // }
+                        ]}
+                    />
                     <NavigationItems
                         header="Links"
                         links={[
                             {
                                 external: true,
-                                name: "GitHub",
-                                href: "https://github.com/peteryangio",
-                                icon: faGithub
+                                name: "YouTube",
+                                href: "https://www.youtube.com/peteryang",
+                                icon: faYoutube
+                            },
+                            {
+                                external: true,
+                                name: "Spotify",
+                                href: "https://open.spotify.com/artist/3FNq1NBXDl0Mjifwn1Myuq",
+                                icon: faSpotify
+                            },
+                            {
+                                external: true,
+                                name: "Apple Music",
+                                href: "https://music.apple.com/us/artist/peter-yang/1497672097",
+                                icon: faApple
+                            },
+                            {
+                                external: true,
+                                name: "Twitter",
+                                href: "https://twitter.com/peteryangio",
+                                icon: faTwitter
                             },
                             {
                                 external: true,
@@ -91,15 +85,14 @@ const Sidebar: React.FC = (): JSX.Element => {
                             },
                             {
                                 external: true,
-                                name: "YouTube",
-                                href: "https://www.youtube.com/peteryang",
-                                icon: faYoutube
+                                name: "GitHub",
+                                href: "https://github.com/peteryangio",
+                                icon: faGithub
                             }
-                        ]}/>
+                        ]}
+                    />
                 </div>
-                <div className="font-light">
-                    &copy; 2016 &ndash; {new Date().getFullYear()}
-                </div>
+                <div className="font-light">&copy; 2016 &ndash; {new Date().getFullYear()}</div>
             </nav>
         </>
     );

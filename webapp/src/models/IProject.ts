@@ -1,4 +1,4 @@
-import {IButtonProps} from "../components/Button";
+import { IButtonProps } from "../components/Button";
 
 export interface IProject {
     actions?: IButtonProps[];

@@ -1,45 +1,30 @@
 import React from "react";
 import "./styles/App.scss";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Orchestral from "./pages/Orchestral";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Software from "./pages/Software";
-import Design from "./pages/Design";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Redirect from "./pages/Redirect";
+
+const About = React.lazy(() => import(/*webpackChunkName: "About" */ "./pages/About"));
+const Contact = React.lazy(() => import(/*webpackChunkName: "Contact" */ "./pages/Contact"));
+const Orchestral = React.lazy(() => import(/*webpackChunkName: "Orchestral" */ "./pages/Orchestral"));
+const Design = React.lazy(() => import(/*webpackChunkName: "Design" */ "./pages/Design"));
 
 const App: React.FC = (): JSX.Element => {
     return (
         <BrowserRouter>
             <div className="container">
-                <Sidebar/>
+                <Sidebar />
                 <main>
                     <div className="main-container">
-                        <Switch>
-                            <Route
-                                component={About}
-                                exact
-                                path="/"
-                            />
-                            <Route
-                                component={Contact}
-                                path="/contact"
-                            />
-                            <Route
-                                component={Software}
-                                path="/software"
-                            />
-                            <Route
-                                component={Orchestral}
-                                path="/music"
-                            />
-                            <Route
-                                component={Design}
-                                path="/design"
-                            />
-                            <Route component={Redirect}/>
-                        </Switch>
+                        <React.Suspense fallback={<div />}>
+                            <Switch>
+                                <Route component={About} exact path="/" />
+                                <Route component={Contact} path="/contact" />
+                                <Route component={Orchestral} path="/music" />
+                                <Route component={Design} path="/design" />
+                                <Route component={Redirect} />
+                            </Switch>
+                        </React.Suspense>
                     </div>
                 </main>
             </div>

@@ -10,23 +10,14 @@ export interface IButtonProps {
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps): JSX.Element => {
     return (
-        <button
-            className={`${props.isSecondary ? "button secondary" : "button"}`}
-            onClick={props.onClick}
-        >
-            {
-                props.href
-                    ? (
-                        <a
-                            href={props.href}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            {props.text}
-                        </a>
-                    )
-                    : <span>{props.text}</span>
-            }
+        <button className={`${props.isSecondary ? "button secondary" : "button"}`} onClick={props.onClick}>
+            {props.href ? (
+                <a href={props.href} rel="noopener noreferrer" target="_blank">
+                    {props.text}
+                </a>
+            ) : (
+                <span>{props.text}</span>
+            )}
         </button>
     );
 };

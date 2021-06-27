@@ -1,14 +1,14 @@
 .project-selector {
-  width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  align-items: center;
-  display: flex;
-  height: 200px;
-  margin-bottom: 2rem;
-  user-select: none;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    align-items: center;
+    display: flex;
+    height: 200px;
+    margin-bottom: 2rem;
+    user-select: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }

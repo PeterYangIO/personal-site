@@ -1,7 +1,7 @@
 $text-color: #000000;
 $text-muted: #222222;
-$pink: #EF32D9;
-$blue: #89FFFD;
+$pink: #ef32d9;
+$blue: #89fffd;
 
 $text-xx-large: 48px;
 $text-x-large: 36px;
@@ -14,7 +14,7 @@ $text-normal: 400;
 $text-light: 300;
 
 $border-radius: 25px;
-$box-shadow: 0 10px 20px adjust_color($blue, $alpha: -.81), 0 6px 6px adjust_color($pink, $alpha: -.77);
+$box-shadow: 0 10px 20px adjust_color($blue, $alpha: -0.81), 0 6px 6px adjust_color($pink, $alpha: -0.77);
 
 $opacity: 0.8;
 $transition: all 0.25s;

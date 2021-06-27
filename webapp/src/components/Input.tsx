@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../styles/Input.scss";
 
 interface IInputProps {
@@ -15,35 +15,29 @@ const Input: React.FC<IInputProps> = (props: IInputProps): JSX.Element => {
 
     return (
         <div className="input">
-            <label
-                className={props.value || hasFocus ? "filled": "empty"}
-                htmlFor={props.name}>
+            <label className={props.value || hasFocus ? "filled" : "empty"} htmlFor={props.name}>
                 {props.label}
             </label>
-            {
-                props.type === "textarea"
-                    ? (
-                        <textarea
-                            id={props.name}
-                            onBlur={() => setFocus(false)}
-                            onFocus={() => setFocus(true)}
-                            placeholder=" "
-                            {...props}
-                        />
-                    )
-                    : (
-                        <input
-                            id={props.name}
-                            onBlur={() => setFocus(false)}
-                            onFocus={() => setFocus(true)}
-                            placeholder=" "
-                            type={props.type === undefined ? "text": props.type}
-                            {...props}
-                        />
-                    )
-            }
+            {props.type === "textarea" ? (
+                <textarea
+                    id={props.name}
+                    onBlur={() => setFocus(false)}
+                    onFocus={() => setFocus(true)}
+                    placeholder=" "
+                    {...props}
+                />
+            ) : (
+                <input
+                    id={props.name}
+                    onBlur={() => setFocus(false)}
+                    onFocus={() => setFocus(true)}
+                    placeholder=" "
+                    type={props.type === undefined ? "text" : props.type}
+                    {...props}
+                />
+            )}
         </div>
-    )
+    );
 };
 
 export default Input;

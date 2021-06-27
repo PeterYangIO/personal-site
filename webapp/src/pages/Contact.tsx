@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Page from "../components/Page";
 import MainContent from "../components/MainContent";
 import Button from "../components/Button";
@@ -12,10 +12,7 @@ const Contact: React.FC = (): JSX.Element => {
     const [message, setMessage] = useState("");
 
     return (
-        <Page
-            subtitle="Let's get in touch"
-            title="Contact"
-        >
+        <Page subtitle="Let's get in touch" title="Contact">
             <MainContent>
                 <Input
                     label="Name"
@@ -62,16 +59,16 @@ const Contact: React.FC = (): JSX.Element => {
                         });
                         if (response.ok) {
                             alert("Message submitted");
-                        }
-                        else {
+                        } else {
                             alert("Something went wrong. Please try again later");
                         }
                     }}
-                    text="Submit"/>
+                    text="Submit"
+                />
                 <div className="recaptcha-disclaimer">
                     This site is protected by reCAPTCHA and the Google{" "}
-                    <a href="https://policies.google.com/privacy">Privacy Policy</a>{" "}and{" "}
-                    <a href="https://policies.google.com/terms">Terms of Service</a>{" "}apply.
+                    <a href="https://policies.google.com/privacy">Privacy Policy</a> and{" "}
+                    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
                 </div>
             </MainContent>
         </Page>

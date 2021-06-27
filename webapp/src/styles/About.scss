@@ -3,33 +3,33 @@
 $logo-size: 8rem;
 
 .about {
-  .main-content {
-    margin-top: $logo-size / 2 + 1rem;
+    .main-content {
+        margin-top: $logo-size / 2 + 1rem;
 
-    .logo-container {
-      margin-bottom: 1rem;
-      width: 100%;
+        .logo-container {
+            margin-bottom: 1rem;
+            width: 100%;
 
-      .shadow-container {
-        // Use a dummy container for the shadow so the spin
-        // only affects the logo and not the off-center shadow
-        box-shadow: $box-shadow;
-        border-radius: 50%;
-        margin-top: -($logo-size / 2) - 2rem;
-        margin-left: auto;
-        margin-right: auto;
-        height: $logo-size;
-        width: $logo-size;
+            .shadow-container {
+                // Use a dummy container for the shadow so the spin
+                // only affects the logo and not the off-center shadow
+                box-shadow: $box-shadow;
+                border-radius: 50%;
+                margin-top: -($logo-size / 2) - 2rem;
+                margin-left: auto;
+                margin-right: auto;
+                height: $logo-size;
+                width: $logo-size;
 
-        .logo {
-          transition: transform 1s;
-          width: $logo-size;
+                .logo {
+                    transition: transform 1s;
+                    width: $logo-size;
 
-          &:hover {
-            transform: rotate(360deg);
-          }
+                    &:hover {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

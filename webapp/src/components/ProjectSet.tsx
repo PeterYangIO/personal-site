@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {IProject} from "../models/IProject";
+import React, { useState } from "react";
+import { IProject } from "../models/IProject";
 import ProjectSelector from "./ProjectSelector";
 import MainContent from "./MainContent";
 
@@ -12,25 +12,16 @@ const ProjectSet: React.FC<IProjectSetProps> = (props: IProjectSetProps): JSX.El
 
     return (
         <div>
-            <ProjectSelector
-                projects={props.projects}
-                setProject={setProject}
-                selectedProject={project}
-            />
-            <MainContent
-                actions={project.actions}
-                img={project.img}
-                title={project.title}
-                video={project.video}
-            >
-                {
-                    project.text.map(
-                        (item: string, index: number): JSX.Element => <p key={index}>{item}</p>
+            <ProjectSelector projects={props.projects} setProject={setProject} selectedProject={project} />
+            <MainContent actions={project.actions} img={project.img} title={project.title} video={project.video}>
+                {project.text.map(
+                    (item: string, index: number): JSX.Element => (
+                        <p key={index}>{item}</p>
                     )
-                }
+                )}
             </MainContent>
         </div>
-    )
+    );
 };
 
 export default ProjectSet;

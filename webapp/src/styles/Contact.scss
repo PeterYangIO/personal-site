@@ -1,11 +1,11 @@
 @import "constants";
 
 .recaptcha-disclaimer {
-  color: $text-muted;
-  font-size: $text-small;
-  margin-top: 1rem;
-
-  a {
+    color: $text-muted;
     font-size: $text-small;
-  }
+    margin-top: 1rem;
+
+    a {
+        font-size: $text-small;
+    }
 }

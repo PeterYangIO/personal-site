@@ -1,17 +1,17 @@
 @import "_constants.scss";
 
 .input {
-  label {
-    pointer-events: none;
-    position: relative;
-    transition: $transition;
+    label {
+        pointer-events: none;
+        position: relative;
+        transition: $transition;
 
-    &.filled {
-      top: 0;
-    }
+        &.filled {
+            top: 0;
+        }
 
-    &.empty {
-      top: 1.6rem;
+        &.empty {
+            top: 1.6rem;
+        }
     }
-  }
 }

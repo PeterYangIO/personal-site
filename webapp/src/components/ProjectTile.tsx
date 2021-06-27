@@ -16,17 +16,15 @@ const ProjectTile: React.FC<IProjectTileProps> = (props: IProjectTileProps): JSX
             style={
                 props.img
                     ? {
-                        background: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(${props.img})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        color: "white"
-                    }
+                          background: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(${props.img})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          color: "white"
+                      }
                     : {}
             }
         >
-            <div className="title">
-                {props.title}
-            </div>
+            <div className="title">{props.title}</div>
         </div>
     );
 };
