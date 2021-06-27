@@ -15,7 +15,7 @@ const About: React.FC = (): JSX.Element => {
                     </div>
                 </div>
                 <p>
-                    I am a recent Computer Science / Business Administration graduate from the University of Southern
+                    I am a Computer Science / Business Administration graduate from the University of Southern
                     California currently working at Microsoft as a Software Engineer.
                 </p>
                 <p>
