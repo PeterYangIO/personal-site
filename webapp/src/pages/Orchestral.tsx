@@ -44,6 +44,12 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                                 text: "🎵 Stream"
                             },
                             {
+                                href:
+                                    "https://www.sheetmusicplus.com/title/butter-for-orchestra-digital-sheet-music/22092334",
+                                isSecondary: true,
+                                text: "📄 Sheet music"
+                            },
+                            {
                                 href: "https://www.youtube.com/watch?v=_jxCKZ2rOYU",
                                 text: "🎥 Watch"
                             }
@@ -62,6 +68,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                                     "https://distrokid.com/hyperfollow/peteryang/when-the-partys-over-feat-ziqi-ma--michael-duong",
                                 text: "🎵 Stream"
                             },
+                            sheetMusicAction,
                             {
                                 href: "https://www.youtube.com/watch?v=pvwjDJWgybc",
                                 text: "🎥 Watch"
@@ -81,6 +88,7 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                                     "https://distrokid.com/hyperfollow/peteryang/september-for-orchestra-and-choir-feat-rahul-setty",
                                 text: "🎵 Stream"
                             },
+                            sheetMusicAction,
                             {
                                 href: "https://www.youtube.com/watch?v=wBWZVAjQAws",
                                 text: "🎥 Watch"
@@ -148,6 +156,12 @@ const Orchestral: React.FC<RouteComponentProps> = (props: RouteComponentProps): 
                     },
                     {
                         actions: [
+                            {
+                                isSecondary: true,
+                                href:
+                                    "https://open.spotify.com/track/4iG4iltqFLIrlyzKLxTB7L?si=053c3f2c184c4e37",
+                                text: "🎵 Stream"
+                            },
                             sheetMusicAction,
                             {
                                 href: "https://www.youtube.com/watch?v=CYB5d7IC5Qk",
