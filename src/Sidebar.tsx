@@ -8,7 +8,7 @@ import {
     faTimes,
     faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
-import { faApple, faGithub, faLinkedin, faSpotify, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faApple, faGithub, faLinkedin, faSpotify, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Sidebar: React.FC = (): JSX.Element => {
@@ -77,12 +77,6 @@ const Sidebar: React.FC = (): JSX.Element => {
                                 name: "Apple Music",
                                 href: "https://music.apple.com/us/artist/peter-yang/1497672097",
                                 icon: faApple
-                            },
-                            {
-                                external: true,
-                                name: "Twitter",
-                                href: "https://twitter.com/peteryangio",
-                                icon: faTwitter
                             },
                             {
                                 external: true,

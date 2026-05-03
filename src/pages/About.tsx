@@ -22,10 +22,13 @@ const About: React.FC = (): JSX.Element => {
                     </div>
                 </div>
                 <p>
-                    I am a recent Computer Science / Business Administration graduate from the University of Southern California currently working at Microsoft as a Software Engineer.
+                    I am a conductor, arranger, and double bassist currently serving as Music Director of the Redmond Tech Orchestra. I focus on reimagining the orchestral experience for modern audiences by pairing classical repertoire with music people already know and love.
                 </p>
                 <p>
-                    In my free time I like to make orchestral arrangements of popular music (whether it's pop, film, or games) which you can check out samples of on my <Link to="/music">music page</Link>.
+                    My orchestral arrangements of pop and video game music have attracted over 9,000 subscribers on YouTube. You can check out samples on my <Link to="/music">music page</Link>.
+                </p>
+                <p>
+                    By day, I work as a Senior Software Engineer at Microsoft.
                 </p>
             </MainContent>
         </Page>
