@@ -11,7 +11,7 @@ const Design = React.lazy(() => import("./pages/Design"));
 
 const App: React.FC = (): JSX.Element => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/personal-site">
             <div className="container">
                 <Sidebar />
                 <main>
