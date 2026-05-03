@@ -1,23 +1,6 @@
-/vendor
-/.idea
-secret.php
-composer.phar
-composer.lock
-/sources
-
-# Build files
-asset-manifest.json
-favicon.ico
-index.html
-logo192.png
-logo512.png
-manifest.json
-precache-manifest.*.js
-robots.txt
-service-worker.js
-
-/static/css
-!/static/css/reset.css
+node_modules
+dist
+*.local
 !/static/css/shortpanel.css
 
 /static/js

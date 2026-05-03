@@ -1,0 +1,17 @@
+@use "constants" as *;
+
+.input {
+  label {
+    pointer-events: none;
+    position: relative;
+    transition: $transition;
+
+    &.filled {
+      top: 0;
+    }
+
+    &.empty {
+      top: 1.6rem;
+    }
+  }
+}
